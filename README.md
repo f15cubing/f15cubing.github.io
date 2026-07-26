@@ -63,13 +63,22 @@ To offer a PDF download: export one from the Word original *with the phone
 number removed*, save it to `public/`, and set `cvPdf` in `src/lib/site.ts` to
 its path. The download link only renders when that value is set.
 
-## Deploying
+## CI and deploying
 
-Push to `main`. `.github/workflows/deploy.yml` runs `pnpm check` then
-`pnpm build` and publishes `dist/`.
+`ci.yml` type-checks and builds on every push. It should always be green.
 
-**One-time setup:** in the repository's Settings → Pages, set Source to
-**GitHub Actions**. Until then the workflow will fail at the deploy step.
+`deploy.yml` publishes `dist/` to GitHub Pages. It is **manual-only right now**,
+because this repository is private and Pages is not enabled; running it sooner
+just fails at `configure-pages`.
+
+To go live:
+
+1. Make the repository public. Pages on a private repository requires GitHub Pro.
+2. Settings → Pages → Source: **GitHub Actions**.
+3. Uncomment the `push` trigger in `deploy.yml` so every commit to `main` ships.
+
+Because the repository is named `f15cubing.github.io`, the site serves from the
+root and no `base` path configuration is needed.
 
 For a custom domain later: add a `CNAME` file to `public/` containing the
 domain, set it under Settings → Pages, and update `site` in `astro.config.mjs`.

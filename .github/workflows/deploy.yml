@@ -1,9 +1,16 @@
 name: Deploy to GitHub Pages
 
+# Manual-only for now, because the repository is private and Pages is not
+# enabled. Running it before then fails at `configure-pages`, which is noise.
+#
+# TO GO LIVE:
+#   1. Make the repository public (Pages on a private repo needs GitHub Pro).
+#   2. Settings → Pages → Source: GitHub Actions.
+#   3. Uncomment the `push` trigger below so every commit to main deploys.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+  # push:
+  #   branches: [main]
 
 permissions:
   contents: read
@@ -32,8 +39,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # Type-checks content collections and .astro files; fails the build on a
-      # broken frontmatter schema, so a bad post can't ship silently.
       - run: pnpm check
 
       - run: pnpm build
