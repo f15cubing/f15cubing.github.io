@@ -9,6 +9,52 @@ pnpm check    # type-check + validate content frontmatter
 pnpm build    # → dist/
 ```
 
+## Where to edit what
+
+Line numbers rot, so this table points at files and the identifier to search for.
+
+| To change | Edit | Look for |
+| --- | --- | --- |
+| The tagline under your name | `src/lib/site.ts` | `tagline` |
+| The caption beside the figure | `src/pages/index.astro` | `hero__caption` |
+| The "Who" paragraphs | `src/pages/index.astro` | `id="about-h"` |
+| `/work` heading and intro | `src/pages/work/index.astro` | `page-head__title` |
+| A project's one-liner, status, links | `src/content/work/<slug>.md` | frontmatter |
+| A project's write-up | `src/content/work/<slug>.md` | body, below `---` |
+| Project order, or card vs. full page | `src/content/work/<slug>.md` | `order`, `depth` |
+| The CV | `src/data/cv.ts` | — |
+| Coursework | `src/data/courses.ts` | — |
+| Email, LinkedIn, GitHub, meta description | `src/lib/site.ts` | `links`, `description` |
+| The figure and its animation | `src/components/Construction.astro` | see below |
+| Colours, type scale, spacing | `src/styles/global.css` | `:root` |
+
+Frontmatter is validated, so `pnpm check` catches a mistake before it ships.
+
+## The hero figure and its animation
+
+`src/components/Construction.astro` is one file with two halves.
+
+**The figure** is plain SVG on a `0 0 320 250` canvas: circle centred at
+`(160,140)` with radius `95`, three points on the circumference at `(160,45)`,
+`(73,178)`, `(247,178)`. The two angle marks are `<path>` wedges sharing a 36px
+radius so their widths can be compared directly, which is the whole point of the
+proposition. If you move a point, recompute the wedges or they'll drift off the
+vertex.
+
+**The choreography** is the CSS underneath. Strokes are drawn by animating
+`stroke-dashoffset` to zero; fills use `byrne-ink` to fade in. Order and timing
+come from `animation-delay`, currently: circle at 0ms, the two radii at 720 and
+860, the chord at 1000, the two sides at 1180 and 1340, the points at 1500, then
+the ochre and vermilion angle marks at 1640 and 1800. To make it quicker, scale
+every delay down together — they're deliberately staged in
+compass-and-straightedge order, so changing one in isolation breaks the sequence.
+
+To replace the figure entirely, keep the class names (`cons__circle`,
+`cons__radius`, `cons__chord`, `cons__side`, `cons__wedge-o`, `cons__wedge-a`,
+`cons__pt`) and the animation comes along for free. Update the `aria-label` to
+describe whatever the new figure shows, and keep the `prefers-reduced-motion`
+block at the bottom, which renders the finished state immediately.
+
 ## Design
 
 Colour follows Oliver Byrne's 1847 edition of Euclid's *Elements*, where the

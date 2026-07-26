@@ -2,9 +2,9 @@
 export const site = {
   name: 'Felipe Caicedo',
   url: 'https://f15cubing.github.io',
-  tagline: 'Olympiad mathematics, and the machines I teach it to.',
+  tagline: 'Colombian mathematician at MIT',
   description:
-    'Felipe Caicedo — IMO bronze medallist, MIT mathematics with computer science. Olympiad geometry, proof automation, and tools for competition mathematics.',
+    'Felipe Caicedo — IMO bronze medallist, MIT mathematics with computer science.',
   /** Contact: email, LinkedIn, GitHub. Deliberately no telephone number. */
   email: 'fcaicedo@mit.edu',
   /*

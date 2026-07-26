@@ -8,28 +8,17 @@ summary: Number theory and algebra at Colombia's national training camp, thirty-
 status: Coach and lecturer, Colombian Mathematical Olympiad training programme.
 ---
 
-I spent a year at the Colombian Mathematical Olympiad training programme in
-Bogotá, designing and teaching the number theory and algebra curricula for the
-thirty-plus students preparing for team selection: IMO, Iberoamerican, PAGMO,
+I had the privilege of teaching at the Colombian Mathematical Olympiad training program twice, in January and June 2026.
+
+I designed and taught number theory and algebra curricula for 
+thirty-plus students preparing for international olympiads: IMO, Iberoamerican, PAGMO,
 and CentroAmerican.
 
-On the other side of the desk: I coauthored **Problem 6** of the Colombian
+I also coauthored **Problem 6** of the 2026 Colombian
 Mathematical Olympiad, designed the **Iberoamerican team-selection test**, and
-graded the national semifinal and final rounds.
+marked the national semifinal and final rounds.
 
-## Setting is harder than solving
+## Proposing a problem is infinitely harder than solving it
 
-A competition problem has to be hard for a reason you can name. If the
-difficulty comes from a trick nobody could be expected to find, the problem
-sorts students by luck. If it comes from an idea they've all seen, it sorts them
-by speed. What you want is a problem where the obstruction is real and there is
-a route past it that a well-prepared student could find under pressure. And then
-you want to know, before it goes out, roughly how many of them will.
+Although it may not seem like it, during an exam, you have a lot of advantages. For one, you know the problem can be solved, and fruthermore, you know the solution is, in a certain sense, reasonable. WHen creating a problem, you have to come up with an "interesting" statement (which is a nontrivial task by itself), and then you have to solve it, without any idea if your statement is true, or even if you have the right tools to try and solve it.
 
-Grading finals is what taught me that. You read forty attempts at the same
-problem and you find out what your problem actually asked, as opposed to what
-you meant it to ask. Those are rarely the same thing on the first draft.
-
-That's also where the software on this site comes from. I built a proof checker
-for olympiad geometry because I'd spent a year reading proofs by hand and
-noticing how much of the work was mechanical, and how much of it wasn't.

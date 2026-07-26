@@ -35,7 +35,7 @@ export const courses: Course[] = [
 
 
   // --- In progress ---------------------------------------------------------
-  { number: '6.1210', title: 'Algorithms', status: 'in-progress', term: 'Fall 2026' },
+  { number: '6.1210', title: 'Introduction to Algorithms', status: 'in-progress', term: 'Fall 2026' },
   {
     number: '6.1010',
     title: 'Fundamentals of Programming',
