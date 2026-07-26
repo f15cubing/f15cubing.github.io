@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-07-26T05:54:38.257Z",
+  "fetchedAt": "2026-07-26T08:38:34.214Z",
   "game": {
-    "id": "QnOWroZG",
-    "url": "https://lichess.org/QnOWroZG",
-    "colour": "white",
+    "id": "H2hHMnS6",
+    "url": "https://lichess.org/H2hHMnS6",
+    "colour": "black",
     "won": true,
-    "myRating": 1431,
-    "opponent": "Joey_ChessEngine",
-    "opponentRating": 1694,
+    "myRating": 1424,
+    "opponent": "NexaStrat",
+    "opponentRating": 1309,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-07-25T09:28:39.896Z",
-    "lastFen": "5k2/1p4B1/2b1Q2p/2P3pN/8/P4p2/P2P3P/R5K1 b - - 1 1"
+    "playedAt": "2026-07-26T07:23:22.037Z",
+    "lastFen": "rn1k1b2/1p2pQ2/p2p1p2/3N1P2/4P3/1N6/PPq3rP/2K4R w - - 0 1"
   }
 }
