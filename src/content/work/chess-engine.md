@@ -3,10 +3,10 @@ title: Neural Chess Engine
 kind: engineering
 order: 2
 depth: full
-period: December 2025 – March 2026
-summary: A network trained on 200,000 Lichess positions, wired into a classical search, playing rated games unattended on a cloud VM.
-status: Live. Playing rated games as felipe_bot_53.
-stack: [Python, PyTorch, GCP, Linux]
+period: December 2025 – present
+summary: A network trained on 200,000 Lichess positions, wired into a classical search, playing rated games unattended on a free-tier ARM box.
+status: Live. 4,700+ games played, 3,700+ of them rated, as felipe_bot_53.
+stack: [Python, PyTorch, Oracle Cloud, Linux]
 repo: https://github.com/f15cubing/felipe_bot_53
 links:
   - label: Play it on Lichess
@@ -19,8 +19,15 @@ negamax with alpha–beta pruning, quiescence search to stop it walking into
 captures at the horizon, an opening book, and three-to-five-piece Syzygy
 tablebases so endgames are played perfectly rather than approximately.
 
-It runs as a UCI-compliant bot on an Ubuntu VM on GCP, managed over SSH, and it
-plays rated games without me watching.
+It runs as a UCI-compliant bot on an Ubuntu ARM instance, managed over SSH, with
+automated matchmaking, and it plays rated games without me watching.
+
+It started on Google Cloud, which was a mistake with a deadline attached: when
+the trial lapsed the bot went quiet, and a project whose whole point is that it
+runs unattended had stopped running. I moved it to Oracle's Always Free ARM tier
+(`VM.Standard.A1.Flex`), which has no expiry. Rebuilding on `aarch64` meant
+sorting out the Syzygy tablebases again, since those aren't in the repository.
+The bot has since played over 4,700 games.
 
 ## What I learned from it
 

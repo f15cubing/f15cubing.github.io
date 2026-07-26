@@ -56,12 +56,29 @@ in `period` must be quoted (`period: '2026'`), or YAML parses it as a number.
 
 ## The CV
 
-`src/pages/cv.astro` holds the CV as markup — indexable, readable on a phone,
-in the site's own type. **No telephone number appears anywhere on the site.**
+**Edit `src/data/cv.ts` and nothing else.** `/cv` renders whatever that file
+contains, in order. Each section declares a `kind`:
 
-To offer a PDF download: export one from the Word original *with the phone
-number removed*, save it to `public/`, and set `cvPdf` in `src/lib/site.ts` to
-its path. The download link only renders when that value is set.
+| `kind` | Renders as | Used for |
+| --- | --- | --- |
+| `entries` | role / org / date with bullets | experience, research, projects |
+| `list` | flat lines, no bullets | honours |
+| `pairs` | label / value rows | skills |
+
+Adding a section means appending one object to the `cv` array; the page picks it
+up with no markup changes. Bullet text supports `**bold**` and `*italic*` via a
+small inline formatter (`src/lib/inline.ts`), not a Markdown parser.
+
+**The web CV is allowed to run long.** The one-page constraint belongs to the
+resume PDF, which stays a separate Word-authored document. Don't compress this
+to fit a page.
+
+**No telephone number belongs anywhere in this repository.** The site is public
+and indexed.
+
+To offer the resume as a download: export it from the Word original *with the
+phone number removed*, save it to `public/`, and set `cvPdf` in
+`src/lib/site.ts`. The link only renders when that value is set.
 
 ## CI and deploying
 

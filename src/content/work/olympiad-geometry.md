@@ -22,7 +22,7 @@ assemble a multi-step proof and have it checked by a DDAR engine I wrote from
 scratch in TypeScript, modelled on the deduction half of DeepMind's
 AlphaGeometry. Thirty-one deduction rules, including a length-and-ratio layer
 built on an arithmetic-reasoning core, over fourteen curated puzzles. It
-verifies arguments up to the difficulty of IMO 2019 Problem 2. There's an
+verifies multi-step arguments on IMO-level problems. There's an
 optional natural-language mode that translates a written step into a formal one,
 so you can type "power of a point at $P$" instead of clicking a rule out of a
 list.
@@ -35,6 +35,11 @@ worse than no checker at all: it teaches the student that correct reasoning is
 wrong. So the engine works forwards. It takes the facts you've asserted, closes
 them under its rule set, and asks whether the goal fell out. Any route that
 reaches the goal passes, including routes I never thought of.
+
+Incidences are handled as structure rather than as obligations. Collinearity, or
+a point lying on a line, is read off the configuration by the rules that need
+it, instead of being something the student must stop and cite. A learner who has
+just constructed a point on a line should not have to prove it is on that line.
 
 The length layer was the awkward one. Angle chasing closes nicely under a small
 set of rules; ratios drag in similar triangles, power of a point, and Thales,
