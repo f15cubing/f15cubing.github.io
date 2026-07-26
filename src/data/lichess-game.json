@@ -1,4 +1,17 @@
 {
-  "fetchedAt": null,
-  "game": null
+  "fetchedAt": "2026-07-26T05:54:38.257Z",
+  "game": {
+    "id": "QnOWroZG",
+    "url": "https://lichess.org/QnOWroZG",
+    "colour": "white",
+    "won": true,
+    "myRating": 1431,
+    "opponent": "Joey_ChessEngine",
+    "opponentRating": 1694,
+    "opponentTitle": "BOT",
+    "speed": "bullet",
+    "status": "mate",
+    "playedAt": "2026-07-25T09:28:39.896Z",
+    "lastFen": "5k2/1p4B1/2b1Q2p/2P3pN/8/P4p2/P2P3P/R5K1 b - - 1 1"
+  }
 }
