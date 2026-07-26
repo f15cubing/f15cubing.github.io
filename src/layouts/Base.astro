@@ -4,8 +4,12 @@ import '@fontsource/libre-caslon-text/400.css';
 import '@fontsource/libre-caslon-text/400-italic.css';
 import '@fontsource/libre-caslon-text/700.css';
 import '@fontsource/ibm-plex-mono/400.css';
-import 'katex/dist/katex.min.css';
 import '../styles/global.css';
+/*
+ * KaTeX's stylesheet is ~23 KB and is imported by the two routes that render
+ * markdown, not here. The landing page and CV contain no maths and shouldn't
+ * pay for it. If you add a route that renders `$…$`, import it there too.
+ */
 
 import { getCollection } from 'astro:content';
 import { site } from '../lib/site';

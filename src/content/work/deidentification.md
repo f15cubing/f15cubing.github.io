@@ -14,7 +14,7 @@ links:
 ---
 
 Educational text is full of names, and most of them must not leave the building.
-The obvious approach — ask a large model to redact them — is unreliable in a
+The obvious approach, asking a large model to redact them, is unreliable in a
 specific and dangerous way: it usually works, so you stop checking.
 
 I fine-tuned **Qwen3-1.7B** with 4-bit QLoRA via Unsloth for context-sensitive

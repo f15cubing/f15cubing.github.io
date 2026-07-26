@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import 'katex/dist/katex.min.css'; // this route renders markdown, which may contain maths
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Glyph from '../../components/Glyph.astro';

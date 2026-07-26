@@ -10,7 +10,7 @@ status: Coach and lecturer, Colombian Mathematical Olympiad training programme.
 
 I spent a year at the Colombian Mathematical Olympiad training programme in
 Bogotá, designing and teaching the number theory and algebra curricula for the
-thirty-plus students preparing for team selection — IMO, Iberoamerican, PAGMO,
+thirty-plus students preparing for team selection: IMO, Iberoamerican, PAGMO,
 and CentroAmerican.
 
 On the other side of the desk: I coauthored **Problem 6** of the Colombian
@@ -23,8 +23,8 @@ A competition problem has to be hard for a reason you can name. If the
 difficulty comes from a trick nobody could be expected to find, the problem
 sorts students by luck. If it comes from an idea they've all seen, it sorts them
 by speed. What you want is a problem where the obstruction is real and there is
-a route past it that a well-prepared student could find under pressure — and
-then you want to know, before it goes out, roughly how many of them will.
+a route past it that a well-prepared student could find under pressure. And then
+you want to know, before it goes out, roughly how many of them will.
 
 Grading finals is what taught me that. You read forty attempts at the same
 problem and you find out what your problem actually asked, as opposed to what
@@ -32,4 +32,4 @@ you meant it to ask. Those are rarely the same thing on the first draft.
 
 That's also where the software on this site comes from. I built a proof checker
 for olympiad geometry because I'd spent a year reading proofs by hand and
-noticing how much of the work was mechanical — and how much of it wasn't.
+noticing how much of the work was mechanical, and how much of it wasn't.
