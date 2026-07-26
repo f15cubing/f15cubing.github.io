@@ -1,0 +1,185 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Glyph from '../../components/Glyph.astro';
+import { roman } from '../../lib/site';
+
+export const getStaticPaths = (async () => {
+  const work = await getCollection('work', (w) => w.data.depth === 'full');
+  return work.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const kindNames = {
+  geometry: 'Geometry and proof',
+  engineering: 'Engineering and models',
+  teaching: 'Teaching and problem-setting',
+} as const;
+---
+
+<Base title={d.title} description={d.summary}>
+  <div class="plate">
+    <!-- The margin column: the plate caption. Metadata, never prose. -->
+    <aside class="plate__figure meta">
+      <p class="meta__num u-mono">
+        Proposition {roman(d.order)}
+      </p>
+      <p class="meta__kind">
+        <Glyph kind={d.kind} size={13} label={kindNames[d.kind]} />
+        <span>{kindNames[d.kind]}</span>
+      </p>
+
+      {d.period && <p class="meta__row"><span class="u-mono">When</span>{d.period}</p>}
+
+      {
+        d.stack.length > 0 && (
+          <p class="meta__row">
+            <span class="u-mono">Built with</span>
+            {d.stack.join(' · ')}
+          </p>
+        )
+      }
+
+      {
+        (d.repo || d.demo || d.links.length > 0 || d.closedSource) && (
+          <ul class="meta__links">
+            {d.repo && (
+              <li>
+                <a href={d.repo}>Source</a>
+              </li>
+            )}
+            {d.demo && (
+              <li>
+                <a href={d.demo}>Live</a>
+              </li>
+            )}
+            {d.links.map((l) => (
+              <li>
+                <a href={l.href}>{l.label}</a>
+              </li>
+            ))}
+            {d.closedSource && <li class="meta__closed">Source not public</li>}
+          </ul>
+        )
+      }
+    </aside>
+
+    <article class="prose">
+      <h1 class="prose__title">{d.title}</h1>
+      <p class="u-lede prose__summary">{d.summary}</p>
+      {d.status && <p class="prose__status">{d.status}</p>}
+      <hr />
+      <Content />
+
+      <p class="prose__back u-mono"><a href="/work">← All work</a></p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .meta {
+    font-size: var(--t-sm);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding-top: 0.5rem;
+  }
+
+  .meta__num {
+    margin: 0 0 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  .meta__kind {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    margin: 0 0 0.85rem;
+  }
+
+  .meta__row {
+    margin: 0 0 0.85rem;
+  }
+
+  /* Labels sit above their value, in the utility face. */
+  .meta__row .u-mono {
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  .meta__links {
+    list-style: none;
+    margin: 1.1rem 0 0;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: var(--t-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+  }
+
+  .meta__links a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+  }
+
+  .meta__links a:hover {
+    border-bottom-color: var(--vermilion);
+  }
+
+  .meta__closed {
+    color: var(--ink-faint);
+  }
+
+  .prose__title {
+    font-size: var(--t-2xl);
+    margin: 0 0 0.9rem;
+  }
+
+  .prose__summary {
+    margin-bottom: 0.75rem;
+  }
+
+  .prose__status {
+    font-family: var(--mono);
+    font-size: var(--t-xs);
+    line-height: 1.6;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  /* Rendered-markdown rules live in global.css under .prose */
+
+  .prose__back {
+    margin-top: calc(var(--step) * 2);
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .prose__back a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 46rem) {
+    .meta {
+      padding-top: 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .meta__links {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+</style>

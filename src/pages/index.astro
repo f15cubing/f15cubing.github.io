@@ -1,0 +1,187 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Construction from '../components/Construction.astro';
+import WorkList from '../components/WorkList.astro';
+import { site } from '../lib/site';
+
+const work = (await getCollection('work'))
+  .filter((w) => w.data.depth === 'full')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const latest = posts.slice(0, 2);
+---
+
+<Base root>
+  <header class="hero">
+    <div class="hero__text">
+      <h1 class="hero__name">Felipe<br />Caicedo</h1>
+      <p class="hero__tagline">{site.tagline}</p>
+    </div>
+
+    <div class="hero__figure">
+      <Construction />
+      <p class="hero__caption u-mono">
+        The angle at the centre is twice the angle at the circumference.
+        Lesson one, and still my favourite.
+      </p>
+    </div>
+  </header>
+
+  <hr class="u-rule-double" />
+
+  <section class="about u-measure" aria-labelledby="about-h">
+    <h2 id="about-h" class="u-eyebrow">Who</h2>
+    <p>
+      I study mathematics and computer science at MIT. I competed for Colombia at
+      the International Mathematical Olympiad — bronze in 2025, after honourable
+      mentions in 2023 and 2024 — and I spent the following year coaching the
+      national training programme, teaching number theory and algebra to the
+      thirty-odd students preparing for team selection.
+    </p>
+    <p>
+      Most of what I build comes out of that. A proof checker that verifies
+      olympiad geometry the way a grader would. An archive of competition
+      problems. A chess engine that learned to evaluate positions and now plays
+      rated games unattended. I'm also an AI engineering intern at Alpha School,
+      where I fine-tune small models and build the evaluations that decide
+      whether they actually work.
+    </p>
+    <p>
+      I set problems, too: Problem 6 of the Colombian Mathematical Olympiad, and
+      the Iberoamerican team selection test.
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="work-h">
+    <div class="section__head">
+      <h2 id="work-h" class="u-eyebrow">Selected work</h2>
+      <a class="section__more u-mono" href="/work">All work</a>
+    </div>
+    <WorkList entries={work} compact />
+  </section>
+
+  {
+    latest.length > 0 && (
+      <section class="section" aria-labelledby="writing-h">
+        <div class="section__head">
+          <h2 id="writing-h" class="u-eyebrow">Writing</h2>
+          <a class="section__more u-mono" href="/writing">All writing</a>
+        </div>
+        <ul class="latest">
+          {latest.map((post) => (
+            <li>
+              <a href={`/writing/${post.id}`}>{post.data.title}</a>
+              <p class="latest__summary">{post.data.summary}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: clamp(1.5rem, 5vw, 3.5rem);
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  .hero__name {
+    font-size: var(--t-3xl);
+    margin: 0 0 0.9rem;
+    animation: byrne-rise 700ms cubic-bezier(0.2, 0, 0.2, 1) both;
+  }
+
+  .hero__tagline {
+    font-size: var(--t-md);
+    line-height: 1.42;
+    color: var(--ink-soft);
+    max-width: 22ch;
+    margin: 0;
+    animation: byrne-rise 700ms cubic-bezier(0.2, 0, 0.2, 1) 140ms both;
+  }
+
+  .hero__figure {
+    max-width: 22rem;
+    justify-self: end;
+    width: 100%;
+  }
+
+  .hero__caption {
+    margin: 1rem 0 0;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    max-width: 26ch;
+    animation: byrne-ink 600ms ease 2000ms both;
+  }
+
+  @media (max-width: 46rem) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .hero__figure {
+      justify-self: start;
+      max-width: 18rem;
+    }
+  }
+
+  .section {
+    margin-top: clamp(2.75rem, 7vw, 4rem);
+  }
+
+  .section__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .section__head .u-eyebrow {
+    margin-bottom: 0;
+  }
+
+  .section__more {
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+    color: var(--ink-soft);
+  }
+
+  .section__more:hover {
+    border-bottom-color: var(--vermilion);
+    color: var(--ink);
+  }
+
+  .latest {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .latest > li {
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: var(--t-md);
+  }
+
+  .latest > li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .latest__summary {
+    margin: 0.3rem 0 0;
+    font-size: var(--t-base);
+    color: var(--ink-soft);
+  }
+</style>

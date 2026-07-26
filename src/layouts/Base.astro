@@ -1,0 +1,216 @@
+---
+import '@fontsource/libre-caslon-display/400.css';
+import '@fontsource/libre-caslon-text/400.css';
+import '@fontsource/libre-caslon-text/400-italic.css';
+import '@fontsource/libre-caslon-text/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import 'katex/dist/katex.min.css';
+import '../styles/global.css';
+
+import { getCollection } from 'astro:content';
+import { site } from '../lib/site';
+import Mark from '../components/Mark.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Sets the <title> to just the site name when true (the landing page). */
+  root?: boolean;
+  /** Keeps a page out of search results — used for the empty writing index. */
+  noindex?: boolean;
+}
+
+const { title, description = site.description, root = false, noindex = false } = Astro.props;
+
+const pageTitle = root || !title ? site.name : `${title} — ${site.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).href;
+
+/*
+ * The writing link exists only when there is writing. A published post makes it
+ * appear; nothing on the site advertises a section that has nothing in it.
+ */
+const posts = await getCollection('posts', (p) => !p.data.draft);
+const hasWriting = posts.length > 0;
+
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const nav = [
+  { href: '/work', label: 'Work' },
+  ...(hasWriting ? [{ href: '/writing', label: 'Writing' }] : []),
+  { href: '/cv', label: 'CV' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17130f" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${site.name} — writing`}
+      href="/rss.xml"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+
+  <body>
+    <a class="u-skip" href="#main">Skip to content</a>
+
+    <div class="shell">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav__mark" href="/" aria-label={`${site.name} — home`}>
+          <Mark size={26} />
+          <span class="site-nav__name">{site.name}</span>
+        </a>
+
+        <ul class="site-nav__list">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={path === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <main id="main">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <ul class="site-footer__links">
+          {
+            site.links.map((l) => (
+              <li>
+                <a href={l.href}>{l.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="site-footer__note u-mono">
+          Set in Libre Caslon. Colour after Oliver Byrne's <i>Elements</i>, 1847.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+    padding: 1.75rem 0 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .site-nav__mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    font-size: var(--t-md);
+    letter-spacing: -0.01em;
+  }
+
+  .site-nav__mark:hover .site-nav__name {
+    text-decoration-line: underline;
+    text-decoration-color: var(--vermilion);
+    text-underline-offset: 0.18em;
+  }
+
+  .site-nav__list {
+    display: flex;
+    gap: 1.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: var(--t-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .site-nav__list a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .site-nav__list a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--vermilion);
+  }
+
+  /* Current page is marked with the rule, not with colour alone. */
+  .site-nav__list a[aria-current='page'] {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  main {
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0 0;
+  }
+
+  .site-footer {
+    margin-top: clamp(4rem, 10vw, 7rem);
+    padding: 1.5rem 0 3rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    list-style: none;
+    margin: 0 0 0.9rem;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: var(--t-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .site-footer__links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+  }
+
+  .site-footer__links a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--vermilion);
+  }
+
+  .site-footer__note {
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+</style>

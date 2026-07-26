@@ -1,0 +1,6 @@
+# Build-script approvals. pnpm 11 reads these here, not from package.json.
+# esbuild powers Vite's transform step; sharp is Astro's image optimiser.
+# Both are first-party build tooling for this stack.
+allowBuilds:
+  esbuild: true
+  sharp: true

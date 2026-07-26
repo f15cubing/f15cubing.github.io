@@ -1,0 +1,173 @@
+---
+/*
+ * The work, set as a sequence of propositions: roman numeral, the Byrne shape
+ * standing for the kind of work, title, one line of substance. The numbering is
+ * information — it is the order I'd want someone to read them in — not
+ * decoration bolted onto an unordered list.
+ */
+import type { CollectionEntry } from 'astro:content';
+import Glyph from './Glyph.astro';
+import { roman } from '../lib/site';
+
+interface Props {
+  entries: CollectionEntry<'work'>[];
+  /** Landing-page mode: no status line, tighter rhythm. */
+  compact?: boolean;
+}
+
+const { entries, compact = false } = Astro.props;
+const kindNames = {
+  geometry: 'Geometry and proof',
+  engineering: 'Engineering and models',
+  teaching: 'Teaching and problem-setting',
+} as const;
+---
+
+<ol class:list={['works', compact && 'works--compact']}>
+  {
+    entries.map((entry, i) => {
+      const linked = entry.data.depth === 'full';
+      const href = `/work/${entry.id}`;
+      return (
+        <li class="works__item">
+          <span class="works__num u-mono" aria-hidden="true">
+            {roman(compact ? i + 1 : entry.data.order)}
+          </span>
+
+          <div class="works__body">
+            <h3 class="works__title">
+              <Glyph kind={entry.data.kind} label={kindNames[entry.data.kind]} />
+              {linked ? <a href={href}>{entry.data.title}</a> : <span>{entry.data.title}</span>}
+            </h3>
+
+            <p class="works__summary">{entry.data.summary}</p>
+
+            {!compact && entry.data.status && (
+              <p class="works__status u-mono">{entry.data.status}</p>
+            )}
+
+            {!compact && (entry.data.repo || entry.data.links.length > 0 || entry.data.closedSource) && (
+              <ul class="works__links">
+                {entry.data.repo && (
+                  <li>
+                    <a href={entry.data.repo}>Source</a>
+                  </li>
+                )}
+                {entry.data.demo && (
+                  <li>
+                    <a href={entry.data.demo}>Live</a>
+                  </li>
+                )}
+                {entry.data.links.map((l) => (
+                  <li>
+                    <a href={l.href}>{l.label}</a>
+                  </li>
+                ))}
+                {entry.data.closedSource && <li class="works__closed">Source not public</li>}
+              </ul>
+            )}
+          </div>
+        </li>
+      );
+    })
+  }
+</ol>
+
+<style>
+  .works {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .works__item {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0 1.25rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .works__item:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .works--compact .works__item {
+    padding: 1.1rem 0;
+  }
+
+  /* Numerals hang in their own column, aligned to the first line of the title. */
+  .works__num {
+    padding-top: 0.42em;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+
+  .works__body {
+    min-width: 0;
+  }
+
+  .works__title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    font-size: var(--t-md);
+    margin: 0 0 0.3rem;
+  }
+
+  .works__title a {
+    text-decoration-color: var(--rule-strong);
+  }
+
+  .works__summary {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .works__status {
+    margin: 0.5rem 0 0;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+  }
+
+  .works__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0.7rem 0 0;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: var(--t-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .works__links a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+  }
+
+  .works__links a:hover {
+    border-bottom-color: var(--vermilion);
+  }
+
+  .works__closed {
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 34rem) {
+    .works__item {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.3rem;
+    }
+
+    .works__num {
+      padding-top: 0;
+      text-align: left;
+    }
+  }
+</style>

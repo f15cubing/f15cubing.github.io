@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WorkList from '../../components/WorkList.astro';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  title="Work"
+  description="Olympiad geometry and proof automation, a neural chess engine, de-identification models, coaching and problem-setting for the Colombian Mathematical Olympiad."
+>
+  <header class="page-head u-measure">
+    <p class="u-eyebrow">Work</p>
+    <h1 class="page-head__title">Seven things, in the order I'd read them</h1>
+    <p class="u-lede">
+      Proof automation and competition mathematics, mostly, and the models and
+      tooling that grew out of teaching it. Status lines are honest; where
+      something is half-built I've said so.
+    </p>
+  </header>
+
+  <!-- No divider here: the list's own top hairline separates it. Two rules
+       stacked read as an empty row. -->
+  <div class="spacer"></div>
+
+  <WorkList entries={work} />
+
+  <p class="legend u-mono">
+    Shapes after Byrne: <span class="legend__k">▲</span> geometry and proof,
+    <span class="legend__k legend__k--e">■</span> engineering and models,
+    <span class="legend__k legend__k--t">●</span> teaching and problem-setting.
+  </p>
+</Base>
+
+<style>
+  .page-head__title {
+    font-size: var(--t-2xl);
+    margin: 0 0 1rem;
+  }
+
+  .spacer {
+    height: clamp(1.75rem, 5vw, 2.75rem);
+  }
+
+  .legend {
+    margin-top: 1.5rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  .legend__k {
+    color: var(--vermilion);
+    font-size: 1.1em;
+  }
+
+  .legend__k--e {
+    color: var(--ultramarine);
+  }
+
+  .legend__k--t {
+    color: var(--ochre);
+  }
+</style>

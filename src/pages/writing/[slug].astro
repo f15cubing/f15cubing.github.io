@@ -1,0 +1,101 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Glyph from '../../components/Glyph.astro';
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('posts', (p) => !p.data.draft);
+  return posts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const fmt = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base title={d.title} description={d.summary}>
+  <div class="plate">
+    <aside class="plate__figure post-meta">
+      <p class="post-meta__row">
+        <span class="u-mono">Published</span>
+        <time datetime={d.date.toISOString()}>{fmt.format(d.date)}</time>
+      </p>
+      {
+        d.tags.length > 0 && (
+          <p class="post-meta__row">
+            <span class="u-mono">Tags</span>
+            {d.tags.join(' · ')}
+          </p>
+        )
+      }
+      <p class="post-meta__glyph"><Glyph kind={d.kind} size={13} /></p>
+    </aside>
+
+    <article class="prose">
+      <h1 class="prose__title">{d.title}</h1>
+      <p class="u-lede">{d.summary}</p>
+      <hr />
+      <Content />
+      <p class="prose__back u-mono"><a href="/writing">← All writing</a></p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .post-meta {
+    font-size: var(--t-sm);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding-top: 0.5rem;
+  }
+
+  .post-meta__row {
+    margin: 0 0 0.85rem;
+  }
+
+  .post-meta__row .u-mono {
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  .post-meta__glyph {
+    margin: 1.2rem 0 0;
+  }
+
+  .prose__title {
+    font-size: var(--t-2xl);
+    margin: 0 0 0.9rem;
+  }
+
+  .prose__back {
+    margin-top: calc(var(--step) * 2);
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .prose__back a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 46rem) {
+    .post-meta {
+      padding-top: 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .post-meta__glyph {
+      display: none;
+    }
+  }
+</style>

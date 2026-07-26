@@ -1,0 +1,64 @@
+---
+/*
+ * Byrne's device: the figure *is* the label. Where a normal site would write
+ * a category name or reach for an emoji, we set the shape that stands for that
+ * kind of work, in its own colour. Used inline in running prose and as the
+ * marker on list items.
+ *
+ *   triangle / vermilion   — geometry, proof, construction
+ *   square   / ultramarine — engineering, systems, models
+ *   circle   / ochre       — teaching, writing, problem-setting
+ */
+export type Kind = 'geometry' | 'engineering' | 'teaching';
+
+interface Props {
+  kind: Kind;
+  size?: number;
+  /** Accessible name. Omit when adjacent text already says it. */
+  label?: string;
+  class?: string;
+}
+
+const { kind, size = 12, label, class: className = '' } = Astro.props;
+
+const shapes: Record<Kind, { color: string; node: string }> = {
+  geometry: {
+    color: 'var(--vermilion)',
+    node: '<polygon points="6,0.6 11.6,10.8 0.4,10.8" />',
+  },
+  engineering: {
+    color: 'var(--ultramarine)',
+    node: '<rect x="1" y="1" width="10" height="10" />',
+  },
+  teaching: {
+    color: 'var(--ochre)',
+    node: '<circle cx="6" cy="6" r="5.2" />',
+  },
+};
+
+const { color, node } = shapes[kind];
+---
+
+<svg
+  class={`glyph ${className}`}
+  width={size}
+  height={size}
+  viewBox="0 0 12 12"
+  style={`--glyph-color: ${color}`}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+  focusable="false"
+  set:html={node}
+/>
+
+<style>
+  .glyph {
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.04em;
+    fill: var(--glyph-color);
+    flex: none;
+  }
+</style>

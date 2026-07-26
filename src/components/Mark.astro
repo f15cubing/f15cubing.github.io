@@ -1,0 +1,30 @@
+---
+/*
+ * The mark, after ByrneLogo in the Interactive Olympiad Geometry codebase: a
+ * triangle inscribed in a circle with the centre marked. Same figure, same
+ * triad, so the site and the app are recognisably one project.
+ */
+interface Props {
+  size?: number;
+}
+const { size = 28 } = Astro.props;
+---
+
+<svg
+  class="mark"
+  width={size}
+  height={size}
+  viewBox="0 0 40 40"
+  aria-hidden="true"
+  focusable="false"
+>
+  <circle cx="20" cy="20" r="16.5" fill="none" stroke="var(--ink)" stroke-width="1.5" />
+  <polygon points="20,5 34,28 6,28" fill="var(--vermilion)" />
+  <circle cx="20" cy="20" r="3.4" fill="var(--ochre)" stroke="var(--ink)" stroke-width="1.2" />
+</svg>
+
+<style>
+  .mark {
+    flex: none;
+  }
+</style>

@@ -1,0 +1,363 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/site';
+
+/*
+ * The CV lives here as markup, not as an uploaded document: readable on a
+ * phone, indexable, and in the site's own type. No telephone number appears on
+ * any public copy — see site.cvPdf.
+ */
+
+const education = {
+  school: 'Massachusetts Institute of Technology',
+  degree: 'B.S. Mathematics with Computer Science',
+  when: 'September 2025 – May 2029',
+  where: 'Cambridge, MA',
+  coursework:
+    'Abstract Algebra I & II (18.701/702), Real Analysis (18.100A), Low-Level Programming in C & Assembly (6.190).',
+  inProgress:
+    'Fall 2026: Algorithms (6.1210), Fundamentals of Programming (6.1010), Computation Structures (6.1910), Theory of Computation (18.404), Stochastic Processes (18.615).',
+};
+
+const honours = [
+  'International Mathematical Olympiad — Bronze Medal (2025); Honourable Mention (2023, 2024)',
+  'Iberoamerican Mathematical Olympiad — Silver Medal (2023, 2024)',
+  'Colombian Mathematical Olympiad — National Winner (2023, 2024, 2025)',
+  'Putnam Mathematical Competition — Top 500 (2025)',
+];
+
+const experience = [
+  {
+    role: 'AI Engineering Intern',
+    org: 'Alpha School / Gauntlet AI',
+    when: 'June 2026 – present',
+    where: 'Remote',
+    points: [
+      'Fine-tuned Qwen3-1.7B (4-bit QLoRA, Unsloth) for context-sensitive personal-name de-identification in educational text, raising entity-level recall from 0.19 to 0.93 and cutting data leakage from 0.41 to 0.04 against a prompted baseline; published the adapter and dataset to Hugging Face with bootstrap confidence intervals and a leakage-quarantined evaluation set.',
+      "Forked Anki (desktop and Android) in one week to build a GRE Mathematics prep app with a three-score readiness model — FSRS recall, logistic-regression performance, and projected scaled score — including a read-only mastery-query RPC added to Anki's Rust backend; shipped 50+ PRs via parallel autonomous-agent workflows.",
+      'Authored research briefs on LLM evaluation, including IRT-calibrated adaptive benchmarking that recovers a 14,000-item benchmark score to within about 2% from roughly 100 items, and ran citation-integrity sweeps that caught fabricated and misattributed claims before publication.',
+    ],
+  },
+  {
+    role: 'Coach & Lecturer',
+    org: 'Colombian Mathematical Olympiad Training Programme',
+    when: 'August 2025 – June 2026',
+    where: 'Bogotá, Colombia',
+    points: [
+      'Designed and taught the number theory and algebra curricula at the national training camp, for 30+ students preparing for IMO, Iberoamerican, PAGMO, and CentroAmerican team selection.',
+      'Coauthored Problem 6 for the Colombian Mathematical Olympiad; designed the Iberoamerican team-selection test; graded the national semifinal and final rounds.',
+    ],
+  },
+  {
+    role: 'Treasurer',
+    org: 'Number Six Club, MIT',
+    when: 'January 2026 – present',
+    where: 'Cambridge, MA',
+    points: [
+      'Manage a $400K+ annual operating budget for a 50+ member living group; built and maintain the financial system tracking income, expenses, rent, and disbursements, and handle tax filings.',
+    ],
+  },
+];
+
+const research = {
+  role: 'Undergraduate Researcher (UROP)',
+  org: 'MIT Department of Mathematics — advised by Prof. Haynes Miller',
+  when: 'November 2025 – present',
+  where: 'Cambridge, MA',
+  points: [
+    'Built a Rust framework to computationally verify algebraic identities and test conjectures on level algebras and medial magmas.',
+    'Applying category theory and algebraic topology to characterise their structure; contributing proofs to a manuscript in preparation.',
+  ],
+};
+
+const projects = [
+  {
+    role: 'Neural Chess Engine & Lichess Bot',
+    org: 'Python · PyTorch · GCP · Linux',
+    when: 'December 2025 – March 2026',
+    points: [
+      'Trained a multi-layer neural network on 200,000+ Lichess positions to evaluate board states; integrated with negamax search, alpha–beta pruning, quiescence search, an opening book, and 3–5-piece Syzygy tablebases.',
+      'Deployed as a live, UCI-compliant bot on a GCP Ubuntu VM, actively playing rated games.',
+    ],
+  },
+  {
+    role: 'Interactive Olympiad Geometry Platform',
+    org: 'TypeScript · React · Firebase',
+    when: 'Ongoing',
+    points: [
+      "Built a formal geometry proof assistant with a from-scratch DDAR engine modelled on DeepMind's AlphaGeometry — 31 deduction rules verifying multi-step Euclidean proofs up to IMO 2019 Problem 2 difficulty — plus a natural-language-to-formal-statement translator.",
+    ],
+  },
+];
+
+const skills = [
+  { label: 'Proficient', value: 'Python, LaTeX, Bash/Linux CLI, Git' },
+  { label: 'Familiar', value: 'Rust, TypeScript/React, C & Assembly' },
+  { label: 'ML & data', value: 'PyTorch, Hugging Face, Unsloth, QLoRA/quantisation, NumPy' },
+  { label: 'Infrastructure', value: 'GCP, Firebase, Linux' },
+  { label: 'Languages', value: 'English (fluent), Spanish (native)' },
+];
+---
+
+<Base
+  title="CV"
+  description="Curriculum vitae — Felipe Caicedo. MIT mathematics with computer science, IMO bronze medallist, AI engineering intern at Alpha School."
+>
+  <header class="cv-head">
+    <p class="u-eyebrow">Curriculum vitae</p>
+    <h1 class="cv-head__title">Felipe Caicedo</h1>
+    <ul class="cv-head__contact u-mono">
+      {
+        site.links.map((l) => (
+          <li>
+            <a href={l.href}>{l.href.replace(/^mailto:|^https?:\/\//, '')}</a>
+          </li>
+        ))
+      }
+    </ul>
+    {
+      site.cvPdf && (
+        <p class="cv-head__pdf u-mono no-print">
+          <a href={site.cvPdf}>Download as PDF</a>
+        </p>
+      )
+    }
+  </header>
+
+  <!-- The first section's own top hairline is the divider. -->
+  <div class="cv-gap"></div>
+
+  <section class="cv-sec" aria-labelledby="cv-edu">
+    <h2 id="cv-edu" class="cv-sec__label u-mono">Education</h2>
+    <div class="cv-sec__body">
+      <article class="entry">
+        <h3 class="entry__role">{education.degree}</h3>
+        <p class="entry__org">{education.school}</p>
+        <p class="entry__when u-mono">{education.when} · {education.where}</p>
+        <ul class="entry__points">
+          <li><strong>Relevant coursework.</strong> {education.coursework}</li>
+          <li><strong>In progress.</strong> {education.inProgress}</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="cv-sec" aria-labelledby="cv-hon">
+    <h2 id="cv-hon" class="cv-sec__label u-mono">Honours</h2>
+    <div class="cv-sec__body">
+      <ul class="plain">
+        {honours.map((h) => <li>{h}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-sec" aria-labelledby="cv-exp">
+    <h2 id="cv-exp" class="cv-sec__label u-mono">Experience</h2>
+    <div class="cv-sec__body">
+      {
+        experience.map((e) => (
+          <article class="entry">
+            <h3 class="entry__role">{e.role}</h3>
+            <p class="entry__org">{e.org}</p>
+            <p class="entry__when u-mono">{e.when} · {e.where}</p>
+            <ul class="entry__points">
+              {e.points.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="cv-sec" aria-labelledby="cv-res">
+    <h2 id="cv-res" class="cv-sec__label u-mono">Research</h2>
+    <div class="cv-sec__body">
+      <article class="entry">
+        <h3 class="entry__role">{research.role}</h3>
+        <p class="entry__org">{research.org}</p>
+        <p class="entry__when u-mono">{research.when} · {research.where}</p>
+        <ul class="entry__points">
+          {research.points.map((p) => <li>{p}</li>)}
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="cv-sec" aria-labelledby="cv-proj">
+    <h2 id="cv-proj" class="cv-sec__label u-mono">Projects</h2>
+    <div class="cv-sec__body">
+      {
+        projects.map((p) => (
+          <article class="entry">
+            <h3 class="entry__role">{p.role}</h3>
+            <p class="entry__org">{p.org}</p>
+            <p class="entry__when u-mono">{p.when}</p>
+            <ul class="entry__points">
+              {p.points.map((pt) => (
+                <li>{pt}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+      <p class="cv-sec__see no-print">
+        Longer write-ups of these live under <a href="/work">work</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="cv-sec" aria-labelledby="cv-skills">
+    <h2 id="cv-skills" class="cv-sec__label u-mono">Skills</h2>
+    <div class="cv-sec__body">
+      <dl class="skills">
+        {
+          skills.map((s) => (
+            <div class="skills__row">
+              <dt>{s.label}</dt>
+              <dd>{s.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cv-head__title {
+    font-size: var(--t-2xl);
+    margin: 0 0 0.8rem;
+  }
+
+  .cv-head__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .cv-head__contact a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+
+  .cv-head__contact a:hover {
+    border-bottom-color: var(--vermilion);
+  }
+
+  .cv-head__pdf {
+    margin: 0.9rem 0 0;
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .cv-gap {
+    height: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  /* Section labels hang in the margin, like running heads. */
+  .cv-sec {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0 2rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .cv-sec:last-of-type {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cv-sec__label {
+    margin: 0;
+    padding-top: 0.3rem;
+    color: var(--ink-faint);
+  }
+
+  .cv-sec__body {
+    min-width: 0;
+  }
+
+  .entry + .entry {
+    margin-top: 1.5rem;
+  }
+
+  .entry__role {
+    font-size: var(--t-md);
+    margin: 0 0 0.15rem;
+  }
+
+  .entry__org {
+    margin: 0 0 0.15rem;
+    color: var(--ink-soft);
+  }
+
+  .entry__when {
+    margin: 0 0 0.55rem;
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .entry__points,
+  .plain {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .entry__points > li,
+  .plain > li {
+    margin-bottom: 0.4rem;
+  }
+
+  .plain {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .cv-sec__see {
+    margin: 1.25rem 0 0;
+    color: var(--ink-soft);
+  }
+
+  .skills {
+    margin: 0;
+  }
+
+  .skills__row {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 0 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .skills dt {
+    font-family: var(--mono);
+    font-size: var(--t-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-top: 0.28em;
+  }
+
+  .skills dd {
+    margin: 0;
+  }
+
+  @media (max-width: 40rem) {
+    .cv-sec,
+    .skills__row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.4rem;
+    }
+
+    .cv-sec__label {
+      padding-top: 0;
+    }
+  }
+</style>

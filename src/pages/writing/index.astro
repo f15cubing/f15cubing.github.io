@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Glyph from '../../components/Glyph.astro';
+
+const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const fmt = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+/*
+ * Until the first post exists this page is unlinked from the nav and kept out of
+ * search results, so the site never advertises an empty room. Publishing a post
+ * makes the nav link and the index appear on their own.
+ */
+const empty = posts.length === 0;
+---
+
+<Base
+  title="Writing"
+  description="Notes on olympiad mathematics, proof automation, and the models and tools I build around them."
+  noindex={empty}
+>
+  <header class="page-head u-measure">
+    <p class="u-eyebrow">Writing</p>
+    <h1 class="page-head__title">Notes</h1>
+    <p class="u-lede">
+      Olympiad mathematics, proof automation, and whatever I've just finished
+      arguing with.
+    </p>
+  </header>
+
+  <div class="spacer"></div>
+
+  {
+    empty ? (
+      <p class="empty">
+        Nothing published yet. The first pieces will most likely be about the
+        deduction engine and what the de-identification evaluation taught me.
+      </p>
+    ) : (
+      <ol class="posts">
+        {posts.map((post) => (
+          <li class="posts__item">
+            <time class="posts__date u-mono" datetime={post.data.date.toISOString()}>
+              {fmt.format(post.data.date)}
+            </time>
+            <div>
+              <h2 class="posts__title">
+                <Glyph kind={post.data.kind} />
+                <a href={`/writing/${post.id}`}>{post.data.title}</a>
+              </h2>
+              <p class="posts__summary">{post.data.summary}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+</Base>
+
+<style>
+  .page-head__title {
+    font-size: var(--t-2xl);
+    margin: 0 0 1rem;
+  }
+
+  .spacer {
+    height: clamp(1.75rem, 5vw, 2.75rem);
+  }
+
+  .empty {
+    color: var(--ink-soft);
+    max-width: var(--measure);
+  }
+
+  .posts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .posts__item {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 0 1.5rem;
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .posts__item:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .posts__date {
+    padding-top: 0.42em;
+    color: var(--ink-faint);
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .posts__title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    font-size: var(--t-md);
+    margin: 0 0 0.3rem;
+  }
+
+  .posts__summary {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 40rem) {
+    .posts__item {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.3rem;
+    }
+
+    .posts__date {
+      padding-top: 0;
+    }
+  }
+</style>

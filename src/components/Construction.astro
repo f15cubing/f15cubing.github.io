@@ -1,0 +1,164 @@
+---
+/*
+ * The hero figure: the inscribed-angle theorem — an angle at the circumference
+ * is half the central angle standing on the same chord. Chosen because it is
+ * lesson one of the Interactive Olympiad Geometry course, so the site opens on
+ * the same proposition the app does.
+ *
+ * Byrne printed no letter labels; the coloured figure carried the argument by
+ * itself. So there are no A/B/C marks here either. Ochre wedge = the angle at
+ * the centre. Vermilion wedge = the angle at the circumference. Ultramarine =
+ * the two radii.
+ *
+ * It draws itself in compass-and-straightedge order: circle, radii, chords,
+ * then the angles. Pure CSS, no scripts, and it holds still for anyone who
+ * asked their system to reduce motion.
+ */
+interface Props {
+  /** Rendered decoratively beside prose that already explains it. */
+  label?: string;
+}
+const { label } = Astro.props;
+---
+
+<figure class="cons">
+  <svg
+    viewBox="0 0 320 250"
+    role="img"
+    aria-label={label ??
+      'A circle with an inscribed triangle: the angle at the centre, drawn in ochre, is twice the angle at the circumference, drawn in vermilion.'}
+  >
+    <!-- circumference -->
+    <circle class="cons__circle" cx="160" cy="140" r="95" />
+
+    <!-- the angle at the centre, on the chord below. Both angle marks use the
+         same 44px radius so their widths can be compared directly: this one is
+         twice the other, which is the whole proposition. -->
+    <path class="cons__wedge-o" d="M160,140 L127,154.4 A36,36 0 0,0 193,154.4 Z" />
+
+    <!-- radii to the ends of the chord -->
+    <line class="cons__radius" x1="160" y1="140" x2="73" y2="178" />
+    <line class="cons__radius cons__radius--2" x1="160" y1="140" x2="247" y2="178" />
+
+    <!-- the chord itself -->
+    <line class="cons__chord" x1="73" y1="178" x2="247" y2="178" />
+
+    <!-- the angle at the circumference, standing on the same chord -->
+    <path class="cons__wedge-a" d="M160,45 L140.3,75.1 A36,36 0 0,0 179.7,75.1 Z" />
+
+    <!-- the two sides subtending it -->
+    <line class="cons__side" x1="160" y1="45" x2="73" y2="178" />
+    <line class="cons__side cons__side--2" x1="160" y1="45" x2="247" y2="178" />
+
+    <!-- centre and the three points on the circumference -->
+    <circle class="cons__pt cons__pt--o" cx="160" cy="140" r="3.4" />
+    <circle class="cons__pt" cx="160" cy="45" r="3" />
+    <circle class="cons__pt" cx="73" cy="178" r="3" />
+    <circle class="cons__pt" cx="247" cy="178" r="3" />
+  </svg>
+</figure>
+
+<style>
+  .cons {
+    margin: 0;
+  }
+
+  .cons svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Every stroked element starts fully dashed-out and is drawn in. */
+  .cons__circle,
+  .cons__radius,
+  .cons__chord,
+  .cons__side {
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 620;
+    stroke-dashoffset: 620;
+    animation: byrne-draw 900ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .cons__circle {
+    stroke: var(--ink);
+    stroke-width: 1.4;
+  }
+
+  .cons__radius {
+    stroke: var(--ultramarine);
+    stroke-width: 2;
+    animation-duration: 420ms;
+    animation-delay: 720ms;
+  }
+
+  .cons__radius--2 {
+    animation-delay: 860ms;
+  }
+
+  .cons__chord {
+    stroke: var(--ink);
+    stroke-width: 1.4;
+    animation-duration: 420ms;
+    animation-delay: 1000ms;
+  }
+
+  .cons__side {
+    stroke: var(--vermilion);
+    stroke-width: 2.4;
+    animation-duration: 520ms;
+    animation-delay: 1180ms;
+  }
+
+  .cons__side--2 {
+    animation-delay: 1340ms;
+  }
+
+  /* Byrne's colour-as-notation: the two angles, filled flat. */
+  .cons__wedge-o,
+  .cons__wedge-a {
+    stroke: none;
+    opacity: 0;
+    animation: byrne-ink 460ms ease forwards;
+  }
+
+  .cons__wedge-o {
+    fill: var(--ochre);
+    animation-delay: 1640ms;
+  }
+
+  .cons__wedge-a {
+    fill: var(--vermilion);
+    animation-delay: 1800ms;
+  }
+
+  .cons__pt {
+    fill: var(--ink);
+    opacity: 0;
+    animation: byrne-ink 320ms ease forwards;
+    animation-delay: 1500ms;
+  }
+
+  .cons__pt--o {
+    fill: var(--ochre);
+    stroke: var(--ink);
+    stroke-width: 1.2;
+  }
+
+  /* Reduced motion: the finished figure, immediately. */
+  @media (prefers-reduced-motion: reduce) {
+    .cons__circle,
+    .cons__radius,
+    .cons__chord,
+    .cons__side {
+      stroke-dashoffset: 0;
+    }
+
+    .cons__wedge-o,
+    .cons__wedge-a,
+    .cons__pt {
+      opacity: 1;
+    }
+  }
+</style>
