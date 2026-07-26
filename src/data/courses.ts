@@ -23,16 +23,16 @@ export interface Course {
 
 export const courses: Course[] = [
   // --- Completed -----------------------------------------------------------
-  // TODO: terms left blank because I didn't want to guess which semester each
-  // of these fell in. Fill them in and they'll be used for grouping.
-  { number: '18.701', title: 'Abstract Algebra I', status: 'completed' },
-  { number: '18.702', title: 'Abstract Algebra II', status: 'completed' },
-  { number: '18.100A', title: 'Real Analysis', status: 'completed' },
+  { number: '18.701', title: 'Abstract Algebra I', status: 'completed', term: 'Fall 2025' },
+  { number: '18.702', title: 'Abstract Algebra II', status: 'completed', term: 'Spring 2026' },
+  { number: '18.100A', title: 'Real Analysis', status: 'completed', term: 'Spring 2026' },
   {
     number: '6.190',
     title: 'Low-Level Programming in C & Assembly',
     status: 'completed',
+    term: 'Spring 2026',
   },
+
 
   // --- In progress ---------------------------------------------------------
   { number: '6.1210', title: 'Algorithms', status: 'in-progress', term: 'Fall 2026' },
@@ -55,8 +55,14 @@ export const courses: Course[] = [
     term: 'Fall 2026',
   },
   {
-    number: '18.615',
-    title: 'Stochastic Processes',
+    number: '18.901',
+    title: 'Introduction to Topology',
+    status: 'in-progress',
+    term: 'Fall 2026',
+  },
+  {
+    number: '24.241',
+    title: 'Logic I',
     status: 'in-progress',
     term: 'Fall 2026',
   },
