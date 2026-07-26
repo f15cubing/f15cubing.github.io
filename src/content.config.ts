@@ -28,6 +28,11 @@ const work = defineCollection({
       .default([]),
     /** Private source: described, deliberately not linked. */
     closedSource: z.boolean().default(false),
+    /**
+     * Renders the cached Lichess game inlay after the prose. Only meaningful on
+     * the chess entry; see src/components/LichessGame.astro.
+     */
+    lichessInlay: z.boolean().default(false),
   }),
 });
 

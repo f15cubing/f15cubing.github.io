@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { site } from '../lib/site';
 import { inline } from '../lib/inline';
 import { cv } from '../data/cv';
+import { completedCourses, coursesInProgress } from '../data/courses';
 
 /*
  * This page renders whatever `src/data/cv.ts` contains, in order. To change the
@@ -58,13 +59,42 @@ import { cv } from '../data/cv';
                   <p class="entry__when u-mono">
                     {e.where ? `${e.when} · ${e.where}` : e.when}
                   </p>
-                  <ul class="entry__points">
-                    {e.points.map((p) => (
-                      <li set:html={inline(p)} />
-                    ))}
-                  </ul>
+                  {e.points.length > 0 && (
+                    <ul class="entry__points">
+                      {e.points.map((p) => (
+                        <li set:html={inline(p)} />
+                      ))}
+                    </ul>
+                  )}
                 </article>
               ))}
+
+            {section.kind === 'courses' && (
+              <div class="courses">
+                <ul class="courses__list">
+                  {completedCourses.map((c) => (
+                    <li>
+                      <span class="courses__num u-mono">{c.number}</span>
+                      <span>{c.title}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {coursesInProgress.map((group) => (
+                  <div class="courses__group">
+                    <p class="courses__term u-mono">In progress · {group.term}</p>
+                    <ul class="courses__list">
+                      {group.items.map((c) => (
+                        <li>
+                          <span class="courses__num u-mono">{c.number}</span>
+                          <span>{c.title}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {section.kind === 'list' && (
               <ul class="plain">
@@ -193,6 +223,36 @@ import { cv } from '../data/cv';
     margin-bottom: 0.4rem;
   }
 
+  /* Subject numbers hang in their own column so the titles align. */
+  .courses__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .courses__list > li {
+    display: grid;
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+    gap: 0 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .courses__num {
+    color: var(--ink-faint);
+    text-transform: none;
+    letter-spacing: 0.04em;
+    padding-top: 0.3em;
+  }
+
+  .courses__group {
+    margin-top: 1.1rem;
+  }
+
+  .courses__term {
+    margin: 0 0 0.4rem;
+    color: var(--ink-faint);
+  }
+
   .pairs {
     margin: 0;
   }
@@ -227,6 +287,13 @@ import { cv } from '../data/cv';
     .pairs__row {
       grid-template-columns: minmax(0, 1fr);
       gap: 0.4rem;
+    }
+
+    /* Keep the number beside its title on narrow screens; stacking each
+       course onto two lines makes the list twice as long for no gain. */
+    .courses__list > li {
+      grid-template-columns: 4.25rem minmax(0, 1fr);
+      gap: 0 0.75rem;
     }
 
     .cv-sec__label {

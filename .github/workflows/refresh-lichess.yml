@@ -1,0 +1,42 @@
+name: Refresh Lichess game
+
+# Picks the bot's latest good win and commits it if it changed, which in turn
+# triggers the deploy workflow. Runs daily; 06:12 UTC rather than on the hour to
+# stay off the minute when every scheduled job on GitHub fires at once.
+on:
+  schedule:
+    - cron: '12 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-lichess
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No dependencies: the script uses built-in fetch.
+      - name: Fetch latest win
+        run: node scripts/fetch-lichess.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/lichess-game.json; then
+            echo "No change; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/lichess-game.json
+          git commit -m "chore(lichess): refresh featured game"
+          git push

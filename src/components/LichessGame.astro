@@ -1,0 +1,222 @@
+---
+/*
+ * The bot's most recent good win, as a drawn final position.
+ *
+ * Data comes from src/data/lichess-game.json, refreshed on a daily schedule by
+ * .github/workflows/refresh-lichess.yml. Nothing here touches the network, so a
+ * rate-limited Lichess can never fail a build.
+ *
+ * The board takes the Byrne palette rather than the usual brown: a stock
+ * chessboard would be the one element on the site that belongs to someone
+ * else's visual language. Ochre squares, ink pieces, paper pieces.
+ */
+import { parseFen, PIECE_PATHS } from '../lib/board';
+import data from '../data/lichess-game.json';
+
+const game = data.game as null | {
+  id: string;
+  url: string;
+  colour: 'white' | 'black';
+  won: boolean;
+  myRating: number | null;
+  opponent: string;
+  opponentRating: number | null;
+  opponentTitle: string | null;
+  speed: string | null;
+  status: string | null;
+  playedAt: string | null;
+  lastFen: string | null;
+};
+
+const squares = parseFen(game?.lastFen);
+
+/* Render nothing at all when there's no cached game or the FEN didn't parse.
+   An empty frame with "no game yet" would be worse than silence. */
+const show = Boolean(game && squares);
+
+const fmt = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+const playedOn = game?.playedAt ? fmt.format(new Date(game.playedAt)) : null;
+
+/* Lichess status codes read as jargon ('outoftime', 'resign'). */
+const outcomes: Record<string, string> = {
+  mate: 'by checkmate',
+  resign: 'by resignation',
+  outoftime: 'on time',
+  timeout: 'by timeout',
+  stalemate: 'by stalemate',
+  draw: 'by agreement',
+  cheat: 'by forfeit',
+  variantEnd: 'by variant rule',
+};
+const outcome = game?.status ? (outcomes[game.status] ?? null) : null;
+
+// Board is drawn from white's side; flip when the bot played black so the
+// position is shown from the bot's point of view.
+const flip = game?.colour === 'black';
+const S = 100;
+---
+
+{
+  show && game && squares && (
+    <figure class="lg">
+      <svg
+        class="lg__board"
+        viewBox={`0 0 ${S * 8} ${S * 8}`}
+        role="img"
+        aria-label={`Final position of a game the bot won as ${game.colour} against ${game.opponent}.`}
+      >
+        {squares.map((sq) => {
+          const col = flip ? 7 - sq.file : sq.file;
+          const row = flip ? 7 - sq.rank : sq.rank;
+          return (
+            <rect
+              x={col * S}
+              y={row * S}
+              width={S}
+              height={S}
+              class={sq.dark ? 'lg__sq lg__sq--dark' : 'lg__sq'}
+            />
+          );
+        })}
+
+        {squares
+          .filter((sq) => sq.piece)
+          .map((sq) => {
+            const col = flip ? 7 - sq.file : sq.file;
+            const row = flip ? 7 - sq.rank : sq.rank;
+            const path = PIECE_PATHS[sq.piece!.letter];
+            if (!path) return null;
+            return (
+              <g transform={`translate(${col * S} ${row * S})`}>
+                <path
+                  d={path}
+                  class={
+                    sq.piece!.colour === 'white' ? 'lg__pc lg__pc--w' : 'lg__pc lg__pc--b'
+                  }
+                />
+              </g>
+            );
+          })}
+
+        <rect
+          x="0.75"
+          y="0.75"
+          width={S * 8 - 1.5}
+          height={S * 8 - 1.5}
+          class="lg__frame"
+        />
+      </svg>
+
+      <figcaption class="lg__cap">
+        <p class="lg__head u-mono">Latest win</p>
+        <p class="lg__line">
+          Beat <strong>{game.opponent}</strong>
+          {game.opponentTitle && <span class="lg__tag u-mono">{game.opponentTitle}</span>}
+          {game.opponentRating && <span> rated {game.opponentRating}</span>}
+          {outcome && <span> {outcome}</span>}, playing {game.colour}
+          {game.speed && <span> {game.speed}</span>}.
+        </p>
+        <p class="lg__meta u-mono">
+          {playedOn}
+          {' · '}
+          <a href={game.url}>Replay it on Lichess</a>
+        </p>
+      </figcaption>
+    </figure>
+  )
+}
+
+<style>
+  .lg {
+    margin: calc(var(--step) * 1.6) 0;
+    display: grid;
+    grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .lg__board {
+    width: 100%;
+    height: auto;
+  }
+
+  .lg__sq {
+    fill: var(--paper);
+  }
+
+  /* Ochre, held back so the ink pieces stay legible on top of it. */
+  .lg__sq--dark {
+    fill: var(--ochre);
+    fill-opacity: 0.42;
+  }
+
+  .lg__frame {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.5;
+  }
+
+  .lg__pc--b {
+    fill: var(--ink);
+  }
+
+  .lg__pc--w {
+    fill: var(--paper);
+    stroke: var(--ink);
+    stroke-width: 2.5;
+  }
+
+  .lg__cap {
+    font-size: var(--t-sm);
+    line-height: 1.55;
+  }
+
+  .lg__head {
+    margin: 0 0 0.5rem;
+    color: var(--ink-faint);
+  }
+
+  .lg__line {
+    margin: 0 0 0.5rem;
+  }
+
+  .lg__tag {
+    display: inline-block;
+    border: 1px solid var(--rule-strong);
+    padding: 0 0.3em;
+    margin: 0 0.15em;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+
+  .lg__meta {
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    color: var(--ink-faint);
+  }
+
+  .lg__meta a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+
+  .lg__meta a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--vermilion);
+  }
+
+  @media (max-width: 34rem) {
+    .lg {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

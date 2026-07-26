@@ -34,7 +34,9 @@ export interface CvPair {
 export type CvSection =
   | { label: string; kind: 'entries'; entries: CvEntry[] }
   | { label: string; kind: 'list'; items: string[] }
-  | { label: string; kind: 'pairs'; pairs: CvPair[] };
+  | { label: string; kind: 'pairs'; pairs: CvPair[] }
+  /** Reads from src/data/courses.ts. Add a class there, not here. */
+  | { label: string; kind: 'courses' };
 
 export const cv: CvSection[] = [
   {
@@ -46,12 +48,15 @@ export const cv: CvSection[] = [
         org: 'Massachusetts Institute of Technology',
         when: 'September 2025 – May 2029',
         where: 'Cambridge, MA',
-        points: [
-          '**Relevant coursework.** Abstract Algebra I & II (18.701/702), Real Analysis (18.100A), Low-Level Programming in C & Assembly (6.190).',
-          '**In progress.** Fall 2026: Algorithms (6.1210), Fundamentals of Programming (6.1010), Computation Structures (6.1910), Theory of Computation (18.404), Stochastic Processes (18.615).',
-        ],
+        points: [],
       },
     ],
+  },
+
+  // Rendered from src/data/courses.ts — add a class there and it appears here.
+  {
+    label: 'Coursework',
+    kind: 'courses',
   },
 
   {

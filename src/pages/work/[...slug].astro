@@ -4,6 +4,7 @@ import 'katex/dist/katex.min.css'; // this route renders markdown, which may con
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Glyph from '../../components/Glyph.astro';
+import LichessGame from '../../components/LichessGame.astro';
 import { roman } from '../../lib/site';
 
 export const getStaticPaths = (async () => {
@@ -75,6 +76,8 @@ const kindNames = {
       {d.status && <p class="prose__status">{d.status}</p>}
       <hr />
       <Content />
+
+      {d.lichessInlay && <LichessGame />}
 
       <p class="prose__back u-mono"><a href="/work">← All work</a></p>
     </article>

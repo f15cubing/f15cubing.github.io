@@ -7,6 +7,7 @@ period: December 2025 – present
 summary: A network trained on 200,000 Lichess positions, wired into a classical search, playing rated games unattended on a free-tier ARM box.
 status: Live. 4,700+ games played, 3,700+ of them rated, as felipe_bot_53.
 stack: [Python, PyTorch, Oracle Cloud, Linux]
+lichessInlay: true
 repo: https://github.com/f15cubing/felipe_bot_53
 links:
   - label: Play it on Lichess
