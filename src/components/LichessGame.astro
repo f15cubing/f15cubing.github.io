@@ -55,6 +55,41 @@ const outcomes: Record<string, string> = {
 };
 const outcome = game?.status ? (outcomes[game.status] ?? null) : null;
 
+/*
+ * Built as one string rather than a row of spans: Astro trims the whitespace
+ * between a tag and an adjacent expression, which silently glues words
+ * together ("rated 1694by checkmate").
+ */
+const isBot = game?.opponentTitle === 'BOT';
+
+/* "a bot rated 1694" reads better than a boxed BOT badge, and a badge forced an
+   awkward wrap that left a line starting with a comma. Human titles (GM, IM)
+   belong in front of the name instead. */
+const rating = game?.opponentRating
+  ? isBot
+    ? `a bot rated ${game.opponentRating}`
+    : `rated ${game.opponentRating}`
+  : isBot
+    ? 'a bot'
+    : null;
+
+const detail = game
+  ? ', ' +
+    [
+      rating,
+      outcome,
+      game.speed
+        ? `playing ${game.colour} in a ${game.speed} game`
+        : `playing ${game.colour}`,
+    ]
+      .filter(Boolean)
+      .join(', ') +
+    '.'
+  : '';
+
+/** Human titles prefix the name; BOT is handled in the sentence instead. */
+const namePrefix = game?.opponentTitle && !isBot ? `${game.opponentTitle} ` : '';
+
 // Board is drawn from white's side; flip when the bot played black so the
 // position is shown from the bot's point of view.
 const flip = game?.colour === 'black';
@@ -115,11 +150,7 @@ const S = 100;
       <figcaption class="lg__cap">
         <p class="lg__head u-mono">Latest win</p>
         <p class="lg__line">
-          Beat <strong>{game.opponent}</strong>
-          {game.opponentTitle && <span class="lg__tag u-mono">{game.opponentTitle}</span>}
-          {game.opponentRating && <span> rated {game.opponentRating}</span>}
-          {outcome && <span> {outcome}</span>}, playing {game.colour}
-          {game.speed && <span> {game.speed}</span>}.
+          Beat <strong>{namePrefix}{game.opponent}</strong>{detail}
         </p>
         <p class="lg__meta u-mono">
           {playedOn}
@@ -183,16 +214,6 @@ const S = 100;
 
   .lg__line {
     margin: 0 0 0.5rem;
-  }
-
-  .lg__tag {
-    display: inline-block;
-    border: 1px solid var(--rule-strong);
-    padding: 0 0.3em;
-    margin: 0 0.15em;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
   }
 
   .lg__meta {
