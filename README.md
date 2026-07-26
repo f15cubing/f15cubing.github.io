@@ -84,18 +84,18 @@ phone number removed*, save it to `public/`, and set `cvPdf` in
 
 `ci.yml` type-checks and builds on every push. It should always be green.
 
-`deploy.yml` publishes `dist/` to GitHub Pages. It is **manual-only right now**,
-because this repository is private and Pages is not enabled; running it sooner
-just fails at `configure-pages`.
+`deploy.yml` publishes `dist/` to <https://f15cubing.github.io/> on every commit
+to `main`. Pages source is set to **GitHub Actions**.
 
-To go live:
-
-1. Make the repository public. Pages on a private repository requires GitHub Pro.
-2. Settings → Pages → Source: **GitHub Actions**.
-3. Uncomment the `push` trigger in `deploy.yml` so every commit to `main` ships.
+The repository is public because Pages requires that on a plan without GitHub
+Pro. Note that even with Pro, a Pages site published from a private repository
+is still publicly reachable — access-controlled Pages needs GitHub Enterprise
+Cloud, so "private website" was never available here.
 
 Because the repository is named `f15cubing.github.io`, the site serves from the
-root and no `base` path configuration is needed.
+root and no `base` path configuration is needed. For a custom domain later: add
+a `CNAME` file to `public/`, set the domain under Settings → Pages, and update
+`site` in `astro.config.mjs`.
 
 For a custom domain later: add a `CNAME` file to `public/` containing the
 domain, set it under Settings → Pages, and update `site` in `astro.config.mjs`.
