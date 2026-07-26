@@ -32,9 +32,9 @@ const { label } = Astro.props;
     <circle class="cons__circle" cx="160" cy="140" r="95" />
 
     <!-- the angle at the centre, on the chord below. Both angle marks use the
-         same 44px radius so their widths can be compared directly: this one is
+         same 30px radius so their widths can be compared directly: this one is
          twice the other, which is the whole proposition. -->
-    <path class="cons__wedge-o" d="M160,140 L127,154.4 A36,36 0 0,0 193,154.4 Z" />
+    <path class="cons__wedge-o" d="M160,140 L132.5,152 A30,30 0 0,0 187.5,152 Z" />
 
     <!-- radii to the ends of the chord -->
     <line class="cons__radius" x1="160" y1="140" x2="73" y2="178" />
@@ -43,16 +43,21 @@ const { label } = Astro.props;
     <!-- the chord itself -->
     <line class="cons__chord" x1="73" y1="178" x2="247" y2="178" />
 
-    <!-- the angle at the circumference, standing on the same chord -->
-    <path class="cons__wedge-a" d="M160,45 L140.3,75.1 A36,36 0 0,0 179.7,75.1 Z" />
+    <!-- The angle at the circumference, standing on the same chord. The apex
+         sits 12 degrees anticlockwise of the top of the circle rather than at
+         the top: off-centre reads better beside the name, and by the inscribed
+         angle theorem sliding it along this arc leaves the angle unchanged, so
+         the figure stays true. Keep it on the circle (centre 160,140, r 95) if
+         you move it again. -->
+    <path class="cons__wedge-a" d="M140.2,47.1 L126.5,73.8 A30,30 0 0,0 159.2,70.3 Z" />
 
     <!-- the two sides subtending it -->
-    <line class="cons__side" x1="160" y1="45" x2="73" y2="178" />
-    <line class="cons__side cons__side--2" x1="160" y1="45" x2="247" y2="178" />
+    <line class="cons__side" x1="140.2" y1="47.1" x2="73" y2="178" />
+    <line class="cons__side cons__side--2" x1="140.2" y1="47.1" x2="247" y2="178" />
 
     <!-- centre and the three points on the circumference -->
     <circle class="cons__pt cons__pt--o" cx="160" cy="140" r="3.4" />
-    <circle class="cons__pt" cx="160" cy="45" r="3" />
+    <circle class="cons__pt" cx="140.2" cy="47.1" r="3" />
     <circle class="cons__pt" cx="73" cy="178" r="3" />
     <circle class="cons__pt" cx="247" cy="178" r="3" />
   </svg>

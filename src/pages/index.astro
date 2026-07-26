@@ -21,6 +21,10 @@ const latest = posts.slice(0, 2);
       <h1 class="hero__name">Felipe<br />Caicedo</h1>
       <p class="hero__tagline">{site.tagline}</p>
     </div>
+
+    <div class="hero__figure">
+      <Construction />
+    </div>
   </header>
 
   <hr class="u-rule-double" />
@@ -104,15 +108,6 @@ const latest = posts.slice(0, 2);
     max-width: 22rem;
     justify-self: end;
     width: 100%;
-  }
-
-  .hero__caption {
-    margin: 1rem 0 0;
-    text-transform: none;
-    letter-spacing: 0.02em;
-    line-height: 1.5;
-    max-width: 26ch;
-    animation: byrne-ink 600ms ease 2000ms both;
   }
 
   @media (max-width: 46rem) {
