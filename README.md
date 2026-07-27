@@ -22,6 +22,8 @@ Line numbers rot, so this table points at files and the identifier to search for
 | A project's one-liner, status, links | `src/content/work/<slug>.md` | frontmatter |
 | A project's write-up | `src/content/work/<slug>.md` | body, below `---` |
 | Project order, or card vs. full page | `src/content/work/<slug>.md` | `order`, `depth` |
+| The "not found" page | `src/pages/404.astro` | — |
+| The link-preview card | `scripts/og-card.html` | see below |
 | The CV | `src/data/cv.ts` | — |
 | Coursework | `src/data/courses.ts` | — |
 | Email, LinkedIn, GitHub, meta description | `src/lib/site.ts` | `links`, `description` |
@@ -81,6 +83,41 @@ readers in dark environments get a dark ground automatically.
 The single animation is the hero figure drawing itself in compass-and-straightedge
 order. It is CSS-only and disabled under `prefers-reduced-motion`.
 
+## The link-preview card
+
+`public/og.png` is what Slack, iMessage, and the rest show when a link to any
+page is pasted. It is a still of the landing page's own hero — same figure, same
+two Caslon cuts, same paper — so a shared link looks like the site rather than
+like a stock quote card. One card serves every page; the title beside it comes
+from `og:title`, which is already per-page.
+
+The card is generated, not hand-drawn. Its source is `scripts/og-card.html`,
+which repeats the figure's geometry with the colours written out in hex, because
+that file is opened by a browser that never loads `global.css`. **Move a point in
+`Construction.astro` and you must move it there too**, or the card will quietly
+disagree with the site.
+
+To re-render after editing the figure or the tagline:
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files \
+  --force-device-scale-factor=2 --window-size=1200,630 \
+  --screenshot=public/og.png scripts/og-card.html
+```
+
+The card's canvas is 1200×630, the standard ratio; at 2x that writes 2400×1260,
+which is what `og:image:width` and `og:image:height` in `Base.astro` declare.
+Change one and change the other. The fonts are loaded straight out of
+`node_modules`, so run `pnpm install` first.
+
+## The "not found" page
+
+`src/pages/404.astro` builds to `404.html`, which GitHub Pages serves for any
+path that doesn't resolve. Without it a mistyped URL gets GitHub's default white
+page. It carries no list of links back, because the nav is already at the top of
+it, and it is `noindex` because `/404` also answers 200 when requested directly.
+
 ## Adding a post
 
 Copy `src/content/posts/template.md`, rename it (the filename becomes the URL),
@@ -94,8 +131,14 @@ and `$$…$$` and rendered at build time by KaTeX.
 ## Adding or editing work
 
 Files in `src/content/work/`. `depth: full` gives an entry its own page;
-`depth: card` lists it on `/work` only. `order` sets the proposition number.
-`kind` picks the Byrne shape. `status` is rendered verbatim — keep it honest.
+`depth: card` lists it on `/work` only. `kind` picks the Byrne shape. `status` is
+rendered verbatim — keep it honest.
+
+`order` sorts the list, low to high; it is *not* the numeral that gets printed.
+Numerals count the entries actually rendered, so setting `hidden: true` on an
+entry closes the gap behind it rather than leaving a proposition missing from the
+sequence. That means `order` values are allowed to have holes, and promoting one
+entry means editing only that entry.
 
 `pnpm check` fails on a bad schema, so a typo can't ship. Note that a bare year
 in `period` must be quoted (`period: '2026'`), or YAML parses it as a number.

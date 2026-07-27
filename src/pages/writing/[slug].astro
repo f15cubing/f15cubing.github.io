@@ -29,14 +29,6 @@ const fmt = new Intl.DateTimeFormat('en-GB', {
         <span class="u-mono">Published</span>
         <time datetime={d.date.toISOString()}>{fmt.format(d.date)}</time>
       </p>
-      {
-        d.tags.length > 0 && (
-          <p class="post-meta__row">
-            <span class="u-mono">Tags</span>
-            {d.tags.join(' · ')}
-          </p>
-        )
-      }
       <p class="post-meta__glyph"><Glyph kind={d.kind} size={13} /></p>
     </aside>
 

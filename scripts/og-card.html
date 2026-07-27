@@ -1,0 +1,132 @@
+<!doctype html>
+<!--
+  Source for public/og.png — the Open Graph card every page points at.
+
+  It is a still of the site's own hero: same figure, same two Caslon cuts, same
+  paper. A link to any page therefore unfurls as the top of the landing page,
+  which is the most recognisable thing the site has and the least like a generic
+  quote card.
+
+  The figure below is Construction.astro frozen at its finished state. There is
+  no animation and no CSS custom properties, because this file is rendered by a
+  browser that never loads global.css — so the Byrne triad is written out in hex.
+  If you move a point in Construction.astro, move it here too, or the card will
+  quietly disagree with the site.
+
+  To re-render after changing the figure or the tagline (needs the fonts, so run
+  pnpm install first):
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars \
+      --allow-file-access-from-files \
+      --force-device-scale-factor=2 --window-size=1200,630 \
+      --screenshot=public/og.png scripts/og-card.html
+
+  That writes 2400x1260. Keep og:image:width/height in Base.astro in step.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>og card</title>
+    <style>
+      @font-face {
+        font-family: 'Libre Caslon Display';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../node_modules/@fontsource/libre-caslon-display/files/libre-caslon-display-latin-400-normal.woff2')
+          format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Libre Caslon Text';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../node_modules/@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-normal.woff2')
+          format('woff2');
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Exactly the card, so the screenshot needs no cropping. */
+      .card {
+        width: 1200px;
+        height: 630px;
+        background: #faf6ef;
+        color: #1b1714;
+        display: grid;
+        grid-template-columns: 1fr 0.82fr;
+        align-items: center;
+        gap: 56px;
+        padding: 0 76px;
+      }
+
+      .name {
+        font-family: 'Libre Caslon Display', Georgia, serif;
+        font-weight: 400;
+        font-size: 104px;
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        margin: 0 0 26px;
+      }
+
+      .tagline {
+        font-family: 'Libre Caslon Text', Georgia, serif;
+        font-size: 31px;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        color: #55483d;
+        margin: 0;
+        /* Wide enough to break as two even lines rather than orphaning "MIT". */
+        max-width: 420px;
+        text-wrap: balance;
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div>
+        <h1 class="name">Felipe<br />Caicedo</h1>
+        <p class="tagline">Colombian mathematician at MIT</p>
+      </div>
+
+      <!-- Construction.astro, finished. Ochre wedge = the angle at the centre;
+           vermilion = the angle at the circumference, half of it. -->
+      <svg viewBox="0 0 320 250">
+        <circle cx="160" cy="140" r="95" fill="none" stroke="#1b1714" stroke-width="1.4" />
+
+        <path d="M160,140 L132.5,152 A30,30 0 0,0 187.5,152 Z" fill="#e0a526" />
+
+        <line x1="160" y1="140" x2="73" y2="178" stroke="#27418c" stroke-width="2" stroke-linecap="round" />
+        <line x1="160" y1="140" x2="247" y2="178" stroke="#27418c" stroke-width="2" stroke-linecap="round" />
+
+        <line x1="73" y1="178" x2="247" y2="178" stroke="#1b1714" stroke-width="1.4" stroke-linecap="round" />
+
+        <path d="M140.2,47.1 L126.5,73.8 A30,30 0 0,0 159.2,70.3 Z" fill="#c0392b" />
+
+        <line x1="140.2" y1="47.1" x2="73" y2="178" stroke="#c0392b" stroke-width="2.4" stroke-linecap="round" />
+        <line x1="140.2" y1="47.1" x2="247" y2="178" stroke="#c0392b" stroke-width="2.4" stroke-linecap="round" />
+
+        <circle cx="160" cy="140" r="3.4" fill="#e0a526" stroke="#1b1714" stroke-width="1.2" />
+        <circle cx="140.2" cy="47.1" r="3" fill="#1b1714" />
+        <circle cx="73" cy="178" r="3" fill="#1b1714" />
+        <circle cx="247" cy="178" r="3" fill="#1b1714" />
+      </svg>
+    </div>
+  </body>
+</html>
