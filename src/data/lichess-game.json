@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-07-27T04:19:08.169Z",
+  "fetchedAt": "2026-07-27T10:08:02.435Z",
   "game": {
-    "id": "CBIEA1AC",
-    "url": "https://lichess.org/CBIEA1AC",
+    "id": "z93HMciZ",
+    "url": "https://lichess.org/z93HMciZ",
     "colour": "white",
     "won": true,
-    "myRating": 1436,
-    "opponent": "dgtrychess",
-    "opponentRating": 1683,
+    "myRating": 1428,
+    "opponent": "maia1",
+    "opponentRating": 1626,
     "opponentTitle": "BOT",
-    "speed": "rapid",
-    "status": "outoftime",
-    "playedAt": "2026-07-26T09:12:10.537Z",
-    "lastFen": "4r1k1/p2p1ppp/2b5/4p3/Np1b1r2/1P1B3P/PP1R1NP1/4K1R1 b - - 6 1"
+    "speed": "bullet",
+    "status": "mate",
+    "playedAt": "2026-07-27T08:02:07.784Z",
+    "lastFen": "8/1N6/4pQ2/7k/3P3R/4P2P/PP4K1/8 b - - 0 1"
   }
 }
