@@ -5,7 +5,7 @@ order: 3
 depth: full
 period: August 2025 – June 2026
 summary: Number theory and algebra at Colombia's national training camp, thirty-odd students deep, plus the problems and selection tests they sat.
-status: Coach and lecturer, Colombian Mathematical Olympiad training programme.
+status: Coach and lecturer, Colombian Mathematical Olympiad training program.
 ---
 
 I had the privilege of teaching at the Colombian Mathematical Olympiad training program twice, in January and June 2026.
@@ -20,5 +20,5 @@ marked the national semifinal and final rounds.
 
 ## Proposing a problem is infinitely harder than solving it
 
-Although it may not seem like it, during an exam, you have a lot of advantages. For one, you know the problem can be solved, and fruthermore, you know the solution is, in a certain sense, reasonable. WHen creating a problem, you have to come up with an "interesting" statement (which is a nontrivial task by itself), and then you have to solve it, without any idea if your statement is true, or even if you have the right tools to try and solve it.
+Although it may not seem like it, during an exam, you have a lot of advantages. For one, you know the problem can be solved, and furthermore, you know the solution is, in a certain sense, reasonable. When creating a problem, you have to come up with an "interesting" statement (which is a nontrivial task by itself), and then you have to solve it, without any idea if your statement is true, or even if you have the right tools to try and solve it.
 
