@@ -13,7 +13,11 @@ const work = defineCollection({
     title: z.string(),
     kind,
     summary: z.string(),
-    /** Position in the sequence of propositions on /work. */
+    /**
+     * Sort key for /work, low to high. It is not the printed numeral: those
+     * count rendered entries, so hiding one leaves no gap. Values may therefore
+     * have holes, and reordering means editing only the entries that moved.
+     */
     order: z.number().int().positive(),
     /** `full` gets its own page; `card` is listed on /work only. */
     depth: z.enum(['full', 'card']).default('card'),
@@ -48,7 +52,6 @@ const posts = defineCollection({
     date: z.date(),
     summary: z.string(),
     kind: kind.default('teaching'),
-    tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),
 });

@@ -30,6 +30,15 @@ const pageTitle = root || !title ? site.name : `${title} — ${site.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).href;
 
 /*
+ * One card for the whole site: a still of the landing page's own hero, so a
+ * shared link unfurls as something recognisable rather than a bare row of text.
+ * Absolute, because unfurlers ignore a relative og:image. Source and re-render
+ * instructions live in scripts/og-card.html; the dimensions below are that
+ * file's canvas at 2x and must be updated together with it.
+ */
+const ogImage = new URL('/og.png', Astro.site ?? site.url).href;
+
+/*
  * The writing link exists only when there is writing. A published post makes it
  * appear; nothing on the site advertises a section that has nothing in it.
  */
@@ -61,7 +70,11 @@ const nav = [
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content={`${site.name} — ${site.tagline}`} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link

@@ -1,0 +1,32 @@
+---
+/*
+ * GitHub Pages serves this file for any path that doesn't resolve, so it is the
+ * one page a reader arrives at by accident. It exists so that they land in the
+ * site's own type and colour instead of GitHub's default white page.
+ *
+ * No list of links back: the nav is already at the top of this page, and a
+ * second copy of it underneath would be the sort of ornament this site cuts.
+ *
+ * noindex because the file is also reachable directly at /404, where Pages
+ * answers 200 and a crawler would otherwise index it as a real page.
+ */
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Not found" description="That page doesn't exist." noindex>
+  <header class="page-head u-measure">
+    <p class="u-eyebrow">404</p>
+    <h1 class="page-head__title">No such construction</h1>
+    <p class="u-lede">
+      Nothing lives at this address. It has either moved or never existed —
+      either way the fault is mine, not yours.
+    </p>
+  </header>
+</Base>
+
+<style>
+  .page-head__title {
+    font-size: var(--t-2xl);
+    margin: 0 0 1rem;
+  }
+</style>

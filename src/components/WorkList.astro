@@ -1,9 +1,11 @@
 ---
 /*
  * The work, set as a sequence of propositions: roman numeral, the Byrne shape
- * standing for the kind of work, title, one line of substance. The numbering is
- * information — it is the order I'd want someone to read them in — not
- * decoration bolted onto an unordered list.
+ * standing for the kind of work, title, one line of substance.
+ *
+ * Numerals count the entries actually rendered, never their `order` values, so
+ * hiding an entry closes the gap behind it instead of leaving a proposition
+ * missing from the sequence. Sort by `order`; number by position.
  */
 import type { CollectionEntry } from 'astro:content';
 import Glyph from './Glyph.astro';
@@ -31,7 +33,7 @@ const kindNames = {
       return (
         <li class="works__item">
           <span class="works__num u-mono" aria-hidden="true">
-            {roman(compact ? i + 1 : entry.data.order)}
+            {roman(i + 1)}
           </span>
 
           <div class="works__body">

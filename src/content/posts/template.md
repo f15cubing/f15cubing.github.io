@@ -6,7 +6,6 @@ date: 2026-07-25
 summary: One or two sentences that appear on the writing index and in the RSS feed. Say what the piece argues, not that it exists.
 # geometry (▲ vermilion) · engineering (■ ultramarine) · teaching (● ochre)
 kind: teaching
-tags: [example]
 # While this is true the post is invisible: no page, no index entry, no RSS.
 # The "Writing" nav link only appears once a non-draft post exists.
 draft: true
