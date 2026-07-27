@@ -4,7 +4,7 @@ kind: teaching
 order: 3
 depth: full
 period: August 2025 – June 2026
-summary: Number theory and algebra at Colombia's national training camp, thirty-odd students deep, plus the problems and selection tests they sat.
+summary: Number theory and algebra at Colombia's national training camp.
 status: Coach and lecturer, Colombian Mathematical Olympiad training program.
 ---
 

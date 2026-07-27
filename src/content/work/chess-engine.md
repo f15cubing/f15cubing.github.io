@@ -1,11 +1,11 @@
 ---
-title: Neural Chess Engine
+title: felipe_bot_53
 kind: engineering
 order: 2
 depth: full
 period: December 2025 – present
-summary: A network trained on 200,000 Lichess positions, wired into a classical search.
-status: Live. 4,700+ games played, 3,700+ of them rated, as felipe_bot_53.
+summary: A chess engine with a nueral network evaluation function, combined with classical search heuristics.
+status: Live and 4,800+ games played.
 stack: [Python, PyTorch, Oracle Cloud, Linux]
 lichessInlay: true
 repo: https://github.com/f15cubing/felipe_bot_53
@@ -14,11 +14,9 @@ links:
     href: https://lichess.org/@/felipe_bot_53
 ---
 
-A multi-layer network trained on more than 200,000 Lichess positions to
-evaluate a board, combined with classic search techniques including
-negamax with alpha–beta pruning, quiescence search to stop it walking into
-captures at the horizon, an opening book, and three-to-five-piece Syzygy
-tablebases so endgames can be played perfectly.
+felipe_bot_53 is a chess bot which uses classic search techniques, including
+negamax with alpha–beta pruning, quiescence search to mitigate the horizon effect, an opening book, and three-to-five-piece
+tablebases so endgames can be played perfectly, combined with a neural network evaluation function trained on more than 200,000 Lichess positions.
 
 It runs on a Ubuntu ARM instance with
 automated matchmaking.

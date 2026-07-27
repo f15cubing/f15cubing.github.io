@@ -3,9 +3,9 @@ title: Level algebras and medial magmas
 kind: geometry
 order: 7
 depth: card
-period: November 2025 – present
-summary: A Rust framework for checking algebraic identities by machine, supporting a structural characterisation of level algebras and medial magmas.
-status: Undergraduate research (UROP) with Prof. Haynes Miller, MIT Mathematics. Manuscript in preparation.
+period: November 2025 – March 2026
+summary: A Rust framework for checking algebraic identities by machine, inspired by work on level algebras and medial magmas.
+status: Undergraduate research (UROP) with Prof. Haynes Miller, MIT Mathematics.
 stack: [Rust]
 closedSource: true
 ---
