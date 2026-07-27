@@ -17,6 +17,11 @@ const work = defineCollection({
     order: z.number().int().positive(),
     /** `full` gets its own page; `card` is listed on /work only. */
     depth: z.enum(['full', 'card']).default('card'),
+    /**
+     * Keeps an entry in the repository but off the site entirely: no card, no
+     * page, no link. Use it to shelve something without deleting the write-up.
+     */
+    hidden: z.boolean().default(false),
     period: z.string().optional(),
     /** Honest current state. Rendered verbatim — no inflation. */
     status: z.string().optional(),

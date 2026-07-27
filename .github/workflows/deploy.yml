@@ -7,6 +7,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Callable by refresh-lichess.yml. GitHub deliberately does not fire `push`
+  # for commits pushed with the default GITHUB_TOKEN, to stop workflows
+  # recursing — so the daily refresh commits data that would otherwise sit
+  # undeployed until a human pushed something. Calling this workflow directly
+  # sidesteps that without needing a personal access token.
+  workflow_call:
 
 permissions:
   contents: read

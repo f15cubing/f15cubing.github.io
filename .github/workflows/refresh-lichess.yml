@@ -1,8 +1,15 @@
 name: Refresh Lichess game
 
-# Picks the bot's latest good win and commits it if it changed, which in turn
-# triggers the deploy workflow. Runs daily; 06:12 UTC rather than on the hour to
-# stay off the minute when every scheduled job on GitHub fires at once.
+# Picks the bot's latest good win, commits it if it changed, and then calls the
+# deploy workflow directly.
+#
+# It has to call deploy rather than rely on the push: GitHub does not fire
+# `on: push` for commits made with the default GITHUB_TOKEN, so this job's own
+# commits never triggered a build and the refreshed game sat undeployed until a
+# human happened to push something.
+#
+# Runs daily at 06:12 UTC, off the hour to avoid the minute when every scheduled
+# job on GitHub fires at once.
 on:
   schedule:
     - cron: '12 6 * * *'
@@ -18,6 +25,9 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    # Lets the deploy job below run only when there is actually new data.
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,11 +44,14 @@ jobs:
         run: node scripts/fetch-lichess.mjs
 
       - name: Commit if changed
+        id: commit
         run: |
           if git diff --quiet -- src/data/lichess-game.json; then
             echo "No change; nothing to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/lichess-game.json
@@ -63,3 +76,14 @@ jobs:
 
           echo "Still could not push after 3 attempts."
           exit 1
+
+  # Publish the commit the job above just made. Skipped when the featured game
+  # didn't change, so an unchanged day costs nothing.
+  deploy:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml

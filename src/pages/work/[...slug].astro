@@ -8,7 +8,7 @@ import LichessGame from '../../components/LichessGame.astro';
 import { roman } from '../../lib/site';
 
 export const getStaticPaths = (async () => {
-  const work = await getCollection('work', (w) => w.data.depth === 'full');
+  const work = await getCollection('work', (w) => w.data.depth === 'full' && !w.data.hidden);
   return work.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }) satisfies GetStaticPaths;
 

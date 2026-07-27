@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import WorkList from '../../components/WorkList.astro';
 
-const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const work = (await getCollection('work', (w) => !w.data.hidden)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
 <Base
@@ -12,7 +14,9 @@ const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.
 >
   <header class="page-head u-measure">
     <p class="u-eyebrow">Work</p>
-    <h1 class="page-head__title">Seven things, in the order I'd read them</h1>
+    <!-- No count in the heading: it goes stale the moment an entry is added or
+         hidden, and nobody notices until it's wrong. -->
+    <h1 class="page-head__title">In the order I'd read them</h1>
     <p class="u-lede">
       Proof automation and competition mathematics, mostly, and the models and
       tooling that grew out of teaching it. Status lines are honest; where

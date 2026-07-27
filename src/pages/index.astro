@@ -5,7 +5,7 @@ import Construction from '../components/Construction.astro';
 import WorkList from '../components/WorkList.astro';
 import { site } from '../lib/site';
 
-const work = (await getCollection('work'))
+const work = (await getCollection('work', (w) => !w.data.hidden))
   .filter((w) => w.data.depth === 'full')
   .sort((a, b) => a.data.order - b.data.order);
 
