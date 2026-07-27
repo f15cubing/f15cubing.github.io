@@ -4,7 +4,7 @@ kind: engineering
 order: 2
 depth: full
 period: December 2025 – present
-summary: A chess engine with a nueral network evaluation function, combined with classical search heuristics.
+summary: A chess engine with a neural network evaluation function, combined with classical search heuristics.
 status: Live and 4,800+ games played.
 stack: [Python, PyTorch, Oracle Cloud, Linux]
 lichessInlay: true

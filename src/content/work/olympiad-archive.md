@@ -4,7 +4,7 @@ kind: teaching
 order: 6
 depth: card
 period: '2026'
-summary: A dataset of olympiad problems, with semantic search to male it easier to find training problems.
+summary: A dataset of olympiad problems, with semantic search to make it easier to find training problems.
 status: In progress.
 stack: [Python]
 repo: https://github.com/f15cubing/olympiad-archive

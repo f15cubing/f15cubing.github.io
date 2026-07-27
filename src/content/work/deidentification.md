@@ -13,8 +13,8 @@ links:
     href: https://huggingface.co/felipe53
 ---
 
-Educational text is full of PII (Personally Identifiable Information), which must be redacted if you want to share the data, say, for educational reseach.
-The obvious approach, asking a large model to redact them, is unreliable for two reasons. One, the model is not trained to do this, and two, you are sending your presumably sensitive data to OpenAI or Anthropic to redact, so you need a model small enoguh to run locally.
+Educational text is full of PII (Personally Identifiable Information), which must be redacted if you want to share the data, say, for educational research.
+The obvious approach, asking a large model to redact them, is unreliable for two reasons. One, the model is not trained to do this, and two, you are sending your presumably sensitive data to OpenAI or Anthropic to redact, so you need a model small enough to run locally.
 
 I fine-tuned **Qwen3-1.7B** with 4-bit QLoRA via Unsloth for context-sensitive
 personal-name de-identification. Against a prompted baseline,
