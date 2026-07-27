@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-07-26T08:38:34.214Z",
+  "fetchedAt": "2026-07-27T04:19:08.169Z",
   "game": {
-    "id": "H2hHMnS6",
-    "url": "https://lichess.org/H2hHMnS6",
-    "colour": "black",
+    "id": "CBIEA1AC",
+    "url": "https://lichess.org/CBIEA1AC",
+    "colour": "white",
     "won": true,
-    "myRating": 1424,
-    "opponent": "NexaStrat",
-    "opponentRating": 1309,
+    "myRating": 1436,
+    "opponent": "dgtrychess",
+    "opponentRating": 1683,
     "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-07-26T07:23:22.037Z",
-    "lastFen": "rn1k1b2/1p2pQ2/p2p1p2/3N1P2/4P3/1N6/PPq3rP/2K4R w - - 0 1"
+    "speed": "rapid",
+    "status": "outoftime",
+    "playedAt": "2026-07-26T09:12:10.537Z",
+    "lastFen": "4r1k1/p2p1ppp/2b5/4p3/Np1b1r2/1P1B3P/PP1R1NP1/4K1R1 b - - 6 1"
   }
 }
