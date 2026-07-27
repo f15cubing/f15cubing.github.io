@@ -20,6 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so the rebase-and-retry below has something to rebase
+          # onto. The repository is small, so this costs nothing.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -39,4 +43,23 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/lichess-game.json
           git commit -m "chore(lichess): refresh featured game"
-          git push
+
+          # You may have pushed between this job's checkout and now, which would
+          # get our push rejected and turn the run red through no fault of the
+          # data. Replay this commit on top of whatever landed and try again.
+          # Only this one file is ever touched here and you will never hand-edit
+          # it, so the rebase has nothing to conflict with in practice.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected; rebasing onto origin/main and retrying."
+            git pull --rebase origin main || {
+              echo "Rebase failed. Someone hand-edited the cached game file."
+              exit 1
+            }
+          done
+
+          echo "Still could not push after 3 attempts."
+          exit 1
