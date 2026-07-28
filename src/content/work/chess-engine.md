@@ -5,7 +5,7 @@ order: 2
 depth: full
 period: December 2025 – present
 summary: A chess engine with a neural network evaluation function, combined with classical search heuristics.
-status: Live and 4,800+ games played.
+status: Live and 5,000+ games played.
 stack: [Python, PyTorch, Oracle Cloud, Linux]
 lichessInlay: true
 repo: https://github.com/f15cubing/felipe_bot_53
@@ -21,7 +21,8 @@ tablebases so endgames can be played perfectly, combined with a neural network e
 It runs on a Ubuntu ARM instance with
 automated matchmaking.
 
-The bot has played over 4,700 games since January.
+The bot has played over 5,000 games since January, 3,800+ of them rated. I stopped
+developing it in March; it has run unattended since.
 
 ## What I learned from it
 

@@ -5,7 +5,7 @@ order: 1
 depth: full
 period: '2026'
 summary: A geometry course where every figure is draggable, and a from-scratch proof checker that verifies olympiad arguments the way a grader would.
-status: Functional MVP — one full course, plus a proof mode backed by a 31-rule DDAR engine. Not yet publicly deployed.
+status: Functional MVP — one full course, plus a proof mode backed by a 38-rule DDAR engine. Not yet publicly deployed.
 stack: [TypeScript, React, JSXGraph, Firebase, Vitest]
 repo: https://github.com/f15cubing/brilliant-clone
 ---
@@ -20,8 +20,9 @@ before they can prove it.
 The second is the part I actually care about. **Competitive Freeplay** lets you
 assemble a multi-step proof and have it checked by a DDAR engine I wrote from
 scratch in TypeScript, modelled on the deduction half of DeepMind's
-AlphaGeometry. Thirty-one deduction rules, including a length-and-ratio layer
-built on an arithmetic-reasoning core, over fourteen curated puzzles. It
+AlphaGeometry. Thirty-eight deduction rules — twenty-nine over angles and
+incidence, nine over lengths and ratios — including a length-and-ratio layer
+built on an arithmetic-reasoning core, over twenty curated puzzles. It
 verifies multi-step arguments on IMO-level problems. There's an
 optional natural-language mode that translates a written step into a formal one,
 so you can type "power of a point at $P$" instead of clicking a rule out of a
