@@ -55,6 +55,12 @@ export const courses: Course[] = [
     term: 'Fall 2026',
   },
   {
+    number: '18.615',
+    title: 'Introduction to Stochastic Processes',
+    status: 'in-progress',
+    term: 'Fall 2026',
+  },
+  {
     number: '18.901',
     title: 'Introduction to Topology',
     status: 'in-progress',
