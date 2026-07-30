@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-07-29T09:08:01.942Z",
+  "fetchedAt": "2026-07-30T08:47:44.058Z",
   "game": {
-    "id": "uRIK3tH4",
-    "url": "https://lichess.org/uRIK3tH4",
+    "id": "RXrjv4Hi",
+    "url": "https://lichess.org/RXrjv4Hi",
     "colour": "black",
     "won": true,
-    "myRating": 1307,
-    "opponent": "NexaStrat",
-    "opponentRating": 1208,
+    "myRating": 1428,
+    "opponent": "schnecken_bot",
+    "opponentRating": 1621,
     "opponentTitle": "BOT",
-    "speed": "blitz",
-    "status": "mate",
-    "playedAt": "2026-07-29T07:39:13.962Z",
-    "lastFen": "2rk4/1p1np3/p2pQp1b/3N1P2/4P3/1N6/PPP5/3K1q2 w - - 0 1"
+    "speed": "bullet",
+    "status": "outoftime",
+    "playedAt": "2026-07-30T08:30:55.895Z",
+    "lastFen": "r1bq2k1/ppppppb1/8/3PP2N/2P2P2/3Q4/PP4P1/3R2K1 w - - 1 1"
   }
 }
