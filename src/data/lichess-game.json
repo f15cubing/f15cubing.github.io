@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-07-30T08:47:44.058Z",
+  "fetchedAt": "2026-07-31T09:16:07.776Z",
   "game": {
-    "id": "RXrjv4Hi",
-    "url": "https://lichess.org/RXrjv4Hi",
+    "id": "EyrjauHo",
+    "url": "https://lichess.org/EyrjauHo",
     "colour": "black",
     "won": true,
-    "myRating": 1428,
-    "opponent": "schnecken_bot",
-    "opponentRating": 1621,
-    "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "outoftime",
-    "playedAt": "2026-07-30T08:30:55.895Z",
-    "lastFen": "r1bq2k1/ppppppb1/8/3PP2N/2P2P2/3Q4/PP4P1/3R2K1 w - - 1 1"
+    "myRating": 1502,
+    "opponent": "Diversificador81",
+    "opponentRating": 1300,
+    "opponentTitle": null,
+    "speed": "rapid",
+    "status": "mate",
+    "playedAt": "2026-07-31T08:54:19.665Z",
+    "lastFen": "6Q1/p5Rp/k7/Pp6/1P3PP1/8/7r/2r1K3 w - - 2 1"
   }
 }
