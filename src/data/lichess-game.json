@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-07-31T09:16:07.776Z",
+  "fetchedAt": "2026-08-01T08:33:00.663Z",
   "game": {
-    "id": "EyrjauHo",
-    "url": "https://lichess.org/EyrjauHo",
+    "id": "IZFnrsLv",
+    "url": "https://lichess.org/IZFnrsLv",
     "colour": "black",
     "won": true,
-    "myRating": 1502,
-    "opponent": "Diversificador81",
-    "opponentRating": 1300,
-    "opponentTitle": null,
-    "speed": "rapid",
+    "myRating": 1416,
+    "opponent": "maia1",
+    "opponentRating": 1690,
+    "opponentTitle": "BOT",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-07-31T08:54:19.665Z",
-    "lastFen": "6Q1/p5Rp/k7/Pp6/1P3PP1/8/7r/2r1K3 w - - 2 1"
+    "playedAt": "2026-08-01T08:14:53.780Z",
+    "lastFen": "4kb1R/pp2pp2/4np2/4pK2/5r2/8/PP6/8 w - - 0 1"
   }
 }
