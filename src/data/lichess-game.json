@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-01T08:33:00.663Z",
+  "fetchedAt": "2026-08-02T08:36:15.081Z",
   "game": {
-    "id": "IZFnrsLv",
-    "url": "https://lichess.org/IZFnrsLv",
+    "id": "TUo1UyaI",
+    "url": "https://lichess.org/TUo1UyaI",
     "colour": "black",
     "won": true,
-    "myRating": 1416,
-    "opponent": "maia1",
-    "opponentRating": 1690,
+    "myRating": 1489,
+    "opponent": "Tinder_BOT",
+    "opponentRating": 1576,
     "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-08-01T08:14:53.780Z",
-    "lastFen": "4kb1R/pp2pp2/4np2/4pK2/5r2/8/PP6/8 w - - 0 1"
+    "speed": "classical",
+    "status": "resign",
+    "playedAt": "2026-08-02T07:29:20.370Z",
+    "lastFen": "1nb1k3/1p1p1p1p/1P1b4/6r1/8/1B4P1/5P1q/5K2 w - - 4 1"
   }
 }
