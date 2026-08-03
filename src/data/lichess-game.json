@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-02T08:36:15.081Z",
+  "fetchedAt": "2026-08-03T10:05:05.776Z",
   "game": {
-    "id": "TUo1UyaI",
-    "url": "https://lichess.org/TUo1UyaI",
+    "id": "xcKNlMRc",
+    "url": "https://lichess.org/xcKNlMRc",
     "colour": "black",
     "won": true,
-    "myRating": 1489,
-    "opponent": "Tinder_BOT",
-    "opponentRating": 1576,
+    "myRating": 1291,
+    "opponent": "C0kval",
+    "opponentRating": 1583,
     "opponentTitle": "BOT",
-    "speed": "classical",
-    "status": "resign",
-    "playedAt": "2026-08-02T07:29:20.370Z",
-    "lastFen": "1nb1k3/1p1p1p1p/1P1b4/6r1/8/1B4P1/5P1q/5K2 w - - 4 1"
+    "speed": "blitz",
+    "status": "outoftime",
+    "playedAt": "2026-08-03T06:56:51.818Z",
+    "lastFen": "rnbqk2r/ppppppbp/5np1/8/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQq - 1 1"
   }
 }
