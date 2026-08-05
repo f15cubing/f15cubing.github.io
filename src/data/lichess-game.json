@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-04T09:06:26.046Z",
+  "fetchedAt": "2026-08-05T08:51:56.949Z",
   "game": {
-    "id": "zFYWmIAL",
-    "url": "https://lichess.org/zFYWmIAL",
-    "colour": "black",
+    "id": "mwI2qcSC",
+    "url": "https://lichess.org/mwI2qcSC",
+    "colour": "white",
     "won": true,
-    "myRating": 1441,
-    "opponent": "Tinder_BOT",
-    "opponentRating": 1303,
-    "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-08-04T08:13:59.891Z",
-    "lastFen": "rnq5/1p2kB2/p2p1p2/8/8/8/PPP2PP1/1K5r w - - 1 1"
+    "myRating": 1491,
+    "opponent": "TheGalaxyBeing",
+    "opponentRating": 1606,
+    "opponentTitle": null,
+    "speed": "rapid",
+    "status": "resign",
+    "playedAt": "2026-08-05T00:12:36.401Z",
+    "lastFen": "8/8/p7/1p1p1k1p/3P2pn/2P5/PP5K/1RB5 b - - 0 1"
   }
 }
