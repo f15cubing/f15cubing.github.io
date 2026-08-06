@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-05T08:51:56.949Z",
+  "fetchedAt": "2026-08-06T08:52:40.132Z",
   "game": {
-    "id": "mwI2qcSC",
-    "url": "https://lichess.org/mwI2qcSC",
-    "colour": "white",
+    "id": "xezNVHsk",
+    "url": "https://lichess.org/xezNVHsk",
+    "colour": "black",
     "won": true,
-    "myRating": 1491,
-    "opponent": "TheGalaxyBeing",
-    "opponentRating": 1606,
+    "myRating": 1943,
+    "opponent": "Masterchesschau",
+    "opponentRating": 1732,
     "opponentTitle": null,
-    "speed": "rapid",
+    "speed": "correspondence",
     "status": "resign",
-    "playedAt": "2026-08-05T00:12:36.401Z",
-    "lastFen": "8/8/p7/1p1p1k1p/3P2pn/2P5/PP5K/1RB5 b - - 0 1"
+    "playedAt": "2026-08-06T08:16:42.589Z",
+    "lastFen": "r1bk3r/ppppb1pp/8/3B4/4P3/2N5/PPP2PPP/4RK2 w - - 1 1"
   }
 }
