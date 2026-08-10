@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-09T07:15:10.544Z",
+  "fetchedAt": "2026-08-10T08:02:51.111Z",
   "game": {
-    "id": "V7VOgrPD",
-    "url": "https://lichess.org/V7VOgrPD",
+    "id": "o2QKxVS1",
+    "url": "https://lichess.org/o2QKxVS1",
     "colour": "black",
     "won": true,
-    "myRating": 1447,
-    "opponent": "turochamp-2ply",
-    "opponentRating": 1556,
+    "myRating": 1419,
+    "opponent": "joshsbot",
+    "opponentRating": 1527,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-08-08T17:39:17.613Z",
-    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
+    "playedAt": "2026-08-10T07:29:46.081Z",
+    "lastFen": "6r1/3ppk1p/7p/8/8/Q7/6qK/8 w - - 6 1"
   }
 }
