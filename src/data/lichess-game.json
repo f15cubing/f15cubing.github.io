@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-12T07:50:47.152Z",
+  "fetchedAt": "2026-08-13T07:51:17.545Z",
   "game": {
-    "id": "9s5wQl8Z",
-    "url": "https://lichess.org/9s5wQl8Z",
-    "colour": "black",
+    "id": "s6QCSiJh",
+    "url": "https://lichess.org/s6QCSiJh",
+    "colour": "white",
     "won": true,
-    "myRating": 1418,
-    "opponent": "maia5",
-    "opponentRating": 1614,
+    "myRating": 1331,
+    "opponent": "NexaStrat",
+    "opponentRating": 1245,
     "opponentTitle": "BOT",
-    "speed": "bullet",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-08-12T06:26:48.778Z",
-    "lastFen": "r1R1n1r1/pp3k2/4p2p/2Q5/2P5/8/PP3PqP/4R1K1 w - - 0 1"
+    "playedAt": "2026-08-13T06:17:01.050Z",
+    "lastFen": "5Q1k/6pp/p7/8/8/2P2BK1/P2B3P/R6R b - - 0 1"
   }
 }
