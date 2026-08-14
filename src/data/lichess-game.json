@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-13T07:51:17.545Z",
+  "fetchedAt": "2026-08-14T07:49:00.951Z",
   "game": {
-    "id": "s6QCSiJh",
-    "url": "https://lichess.org/s6QCSiJh",
-    "colour": "white",
+    "id": "o6qEhQAl",
+    "url": "https://lichess.org/o6qEhQAl",
+    "colour": "black",
     "won": true,
-    "myRating": 1331,
-    "opponent": "NexaStrat",
-    "opponentRating": 1245,
+    "myRating": 1414,
+    "opponent": "bernstein-2ply",
+    "opponentRating": 1338,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-08-13T06:17:01.050Z",
-    "lastFen": "5Q1k/6pp/p7/8/8/2P2BK1/P2B3P/R6R b - - 0 1"
+    "playedAt": "2026-08-14T06:14:05.772Z",
+    "lastFen": "r1b1k3/1p1ppp1Q/p6p/2R4P/P7/1n3P2/5qr1/2R2K2 w - - 9 1"
   }
 }
