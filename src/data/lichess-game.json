@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-14T07:49:00.951Z",
+  "fetchedAt": "2026-08-15T06:56:33.161Z",
   "game": {
-    "id": "o6qEhQAl",
-    "url": "https://lichess.org/o6qEhQAl",
+    "id": "oLeGW1Uw",
+    "url": "https://lichess.org/oLeGW1Uw",
     "colour": "black",
     "won": true,
-    "myRating": 1414,
-    "opponent": "bernstein-2ply",
-    "opponentRating": 1338,
+    "myRating": 1413,
+    "opponent": "bernstein-4ply",
+    "opponentRating": 1462,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-08-14T06:14:05.772Z",
-    "lastFen": "r1b1k3/1p1ppp1Q/p6p/2R4P/P7/1n3P2/5qr1/2R2K2 w - - 9 1"
+    "playedAt": "2026-08-15T06:36:32.125Z",
+    "lastFen": "7k/4Pp1p/1pp1p2p/8/P6q/1N4r1/8/7K w - - 0 1"
   }
 }
