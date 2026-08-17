@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-16T06:57:25.684Z",
+  "fetchedAt": "2026-08-17T07:15:16.627Z",
   "game": {
-    "id": "l0GpMVIQ",
-    "url": "https://lichess.org/l0GpMVIQ",
-    "colour": "black",
+    "id": "x4cyYiwx",
+    "url": "https://lichess.org/x4cyYiwx",
+    "colour": "white",
     "won": true,
-    "myRating": 1507,
-    "opponent": "philidor-142M",
-    "opponentRating": 1728,
-    "opponentTitle": "BOT",
-    "speed": "rapid",
-    "status": "mate",
-    "playedAt": "2026-08-15T08:53:16.553Z",
-    "lastFen": "8/ppp2p1k/5Bpp/8/8/2P5/P4PPP/4q1K1 w - - 0 1"
+    "myRating": 1272,
+    "opponent": "HelixBW",
+    "opponentRating": 1469,
+    "opponentTitle": null,
+    "speed": "blitz",
+    "status": "outoftime",
+    "playedAt": "2026-08-17T05:16:30.170Z",
+    "lastFen": "8/8/5p2/4rkpp/8/5P1K/2R3PP/8 b - - 4 1"
   }
 }
