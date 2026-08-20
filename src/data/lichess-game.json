@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-19T07:04:28.471Z",
+  "fetchedAt": "2026-08-20T07:04:43.986Z",
   "game": {
-    "id": "JxVg3h1f",
-    "url": "https://lichess.org/JxVg3h1f",
-    "colour": "black",
+    "id": "tZ5vmkIE",
+    "url": "https://lichess.org/tZ5vmkIE",
+    "colour": "white",
     "won": true,
-    "myRating": 1307,
-    "opponent": "v7p3r_bot",
-    "opponentRating": 1442,
+    "myRating": 1524,
+    "opponent": "c0br4_bot",
+    "opponentRating": 1544,
     "opponentTitle": "BOT",
-    "speed": "blitz",
-    "status": "outoftime",
-    "playedAt": "2026-08-19T06:37:25.984Z",
-    "lastFen": "5k2/pp1q1p2/8/3B4/P4P1Q/2P1P3/3K3P/6r1 w - - 9 1"
+    "speed": "rapid",
+    "status": "mate",
+    "playedAt": "2026-08-20T06:35:06.017Z",
+    "lastFen": "R7/1pp5/k5pp/2R5/1PN5/5K1P/8/8 b - - 6 1"
   }
 }
