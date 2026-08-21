@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-20T07:04:43.986Z",
+  "fetchedAt": "2026-08-21T07:05:41.153Z",
   "game": {
-    "id": "tZ5vmkIE",
-    "url": "https://lichess.org/tZ5vmkIE",
+    "id": "LAOtaDY5",
+    "url": "https://lichess.org/LAOtaDY5",
     "colour": "white",
     "won": true,
-    "myRating": 1524,
-    "opponent": "c0br4_bot",
-    "opponentRating": 1544,
+    "myRating": 1300,
+    "opponent": "NexaStrat",
+    "opponentRating": 1268,
     "opponentTitle": "BOT",
-    "speed": "rapid",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-08-20T06:35:06.017Z",
-    "lastFen": "R7/1pp5/k5pp/2R5/1PN5/5K1P/8/8 b - - 6 1"
+    "playedAt": "2026-08-21T06:52:57.883Z",
+    "lastFen": "5Q1k/6pp/p7/8/8/2P2BK1/P2B3P/R6R b - - 0 1"
   }
 }
