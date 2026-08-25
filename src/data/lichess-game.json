@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-24T07:19:21.063Z",
+  "fetchedAt": "2026-08-25T07:07:03.362Z",
   "game": {
-    "id": "P9GyX9U1",
-    "url": "https://lichess.org/P9GyX9U1",
+    "id": "9j9UhGYP",
+    "url": "https://lichess.org/9j9UhGYP",
     "colour": "black",
     "won": true,
-    "myRating": 1292,
-    "opponent": "Trainer-Bot",
-    "opponentRating": 1346,
+    "myRating": 1449,
+    "opponent": "turochamp-2ply",
+    "opponentRating": 1541,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-08-24T06:50:05.278Z",
-    "lastFen": "5k2/p1Q2p2/7p/8/r7/3n1b2/1r6/1K6 w - - 24 1"
+    "playedAt": "2026-08-24T13:16:15.821Z",
+    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
   }
 }
