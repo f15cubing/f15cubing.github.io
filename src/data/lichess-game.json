@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-08-28T18:39:04.947Z",
+  "fetchedAt": "2026-08-29T12:40:37.927Z",
   "game": {
-    "id": "uIep1EiZ",
-    "url": "https://lichess.org/uIep1EiZ",
+    "id": "Qqcko9q9",
+    "url": "https://lichess.org/Qqcko9q9",
     "colour": "white",
     "won": true,
-    "myRating": 1512,
-    "opponent": "uSunfish-l7",
-    "opponentRating": 1727,
+    "myRating": 1422,
+    "opponent": "slowmate_bot",
+    "opponentRating": 1361,
     "opponentTitle": "BOT",
-    "speed": "rapid",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-08-28T12:24:04.167Z",
-    "lastFen": "rnQ1kbnr/pp2pppp/2p5/8/8/7P/PPPP1P1P/RNB1KB1q b Qkq - 1 1"
+    "playedAt": "2026-08-29T12:24:52.127Z",
+    "lastFen": "r1b1r2k/pppp3p/5B2/6R1/1QP1P3/3P2P1/5PP1/1N2KB2 b - - 0 1"
   }
 }
