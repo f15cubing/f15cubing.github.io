@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-01T11:36:38.181Z",
+  "fetchedAt": "2026-09-02T11:15:21.623Z",
   "game": {
-    "id": "cN5d5srp",
-    "url": "https://lichess.org/cN5d5srp",
-    "colour": "black",
+    "id": "8TXIR9S7",
+    "url": "https://lichess.org/8TXIR9S7",
+    "colour": "white",
     "won": true,
-    "myRating": 1517,
-    "opponent": "TOB_Z3hcr3c",
-    "opponentRating": 1478,
+    "myRating": 1256,
+    "opponent": "EdwardKillick",
+    "opponentRating": 1059,
     "opponentTitle": "BOT",
-    "speed": "rapid",
-    "status": "outoftime",
-    "playedAt": "2026-09-01T07:22:39.323Z",
-    "lastFen": "4kbr1/4p1pp/2p1q3/7P/8/2Q5/5PP1/6K1 w - - 1 1"
+    "speed": "blitz",
+    "status": "mate",
+    "playedAt": "2026-09-02T08:08:38.777Z",
+    "lastFen": "r1b5/p2kQ3/2pp4/n5B1/8/3P4/PPP2PPP/RN2K2R b KQ - 0 1"
   }
 }
