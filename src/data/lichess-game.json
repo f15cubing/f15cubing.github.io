@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-02T11:15:21.623Z",
+  "fetchedAt": "2026-09-03T11:10:43.658Z",
   "game": {
-    "id": "8TXIR9S7",
-    "url": "https://lichess.org/8TXIR9S7",
+    "id": "706VFQSu",
+    "url": "https://lichess.org/706VFQSu",
     "colour": "white",
     "won": true,
-    "myRating": 1256,
-    "opponent": "EdwardKillick",
-    "opponentRating": 1059,
+    "myRating": 1441,
+    "opponent": "joshsbot",
+    "opponentRating": 1489,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-09-02T08:08:38.777Z",
-    "lastFen": "r1b5/p2kQ3/2pp4/n5B1/8/3P4/PPP2PPP/RN2K2R b KQ - 0 1"
+    "playedAt": "2026-09-03T08:24:37.480Z",
+    "lastFen": "1Q1k3r/1R5r/2p3p1/3p1p2/8/1P6/2P1PPPP/3K1B1R b - - 10 1"
   }
 }
