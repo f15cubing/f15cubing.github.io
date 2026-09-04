@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-03T11:10:43.658Z",
+  "fetchedAt": "2026-09-04T11:14:53.419Z",
   "game": {
-    "id": "706VFQSu",
-    "url": "https://lichess.org/706VFQSu",
+    "id": "M5F3AK3G",
+    "url": "https://lichess.org/M5F3AK3G",
     "colour": "white",
     "won": true,
-    "myRating": 1441,
-    "opponent": "joshsbot",
-    "opponentRating": 1489,
-    "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-09-03T08:24:37.480Z",
-    "lastFen": "1Q1k3r/1R5r/2p3p1/3p1p2/8/1P6/2P1PPPP/3K1B1R b - - 10 1"
+    "myRating": 1504,
+    "opponent": "nefxke",
+    "opponentRating": 1415,
+    "opponentTitle": null,
+    "speed": "rapid",
+    "status": "resign",
+    "playedAt": "2026-09-04T09:56:07.185Z",
+    "lastFen": "6Q1/ppk4p/1q1r4/3Nn3/4p3/7P/PPPP3P/R1BK1Bb1 b - - 0 1"
   }
 }
