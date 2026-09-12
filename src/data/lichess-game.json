@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-11T11:17:38.280Z",
+  "fetchedAt": "2026-09-12T10:42:35.287Z",
   "game": {
-    "id": "BBSjbWZk",
-    "url": "https://lichess.org/BBSjbWZk",
+    "id": "fv0PHawD",
+    "url": "https://lichess.org/fv0PHawD",
     "colour": "black",
     "won": true,
-    "myRating": 1287,
-    "opponent": "ChronicGambler",
-    "opponentRating": 1547,
+    "myRating": 1515,
+    "opponent": "pidgin_bot",
+    "opponentRating": 1548,
     "opponentTitle": "BOT",
-    "speed": "blitz",
-    "status": "mate",
-    "playedAt": "2026-09-11T10:20:24.995Z",
-    "lastFen": "1n6/rp2p3/pk4pn/8/p2b1Pp1/3b4/3q4/5K2 w - - 0 1"
+    "speed": "rapid",
+    "status": "outoftime",
+    "playedAt": "2026-09-12T06:56:22.174Z",
+    "lastFen": "rnbqkbr1/pppppppp/7n/8/2BPP3/2N2N2/PPP2PPP/R1BQ1RK1 w q - 5 1"
   }
 }
