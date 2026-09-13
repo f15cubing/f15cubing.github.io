@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-12T10:42:35.287Z",
+  "fetchedAt": "2026-09-13T11:48:41.125Z",
   "game": {
-    "id": "fv0PHawD",
-    "url": "https://lichess.org/fv0PHawD",
+    "id": "teh50BTT",
+    "url": "https://lichess.org/teh50BTT",
     "colour": "black",
     "won": true,
-    "myRating": 1515,
-    "opponent": "pidgin_bot",
-    "opponentRating": 1548,
+    "myRating": 1422,
+    "opponent": "pawnrobot",
+    "opponentRating": 1255,
     "opponentTitle": "BOT",
-    "speed": "rapid",
+    "speed": "bullet",
     "status": "outoftime",
-    "playedAt": "2026-09-12T06:56:22.174Z",
-    "lastFen": "rnbqkbr1/pppppppp/7n/8/2BPP3/2N2N2/PPP2PPP/R1BQ1RK1 w q - 5 1"
+    "playedAt": "2026-09-13T10:33:44.992Z",
+    "lastFen": "rn1qkbr1/pppbpppp/7n/4N2Q/3P4/2N1P3/PPP2PPP/R1B2RK1 w q - 2 1"
   }
 }
