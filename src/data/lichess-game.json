@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-16T11:29:01.134Z",
+  "fetchedAt": "2026-09-17T11:38:21.003Z",
   "game": {
-    "id": "JVexwg73",
-    "url": "https://lichess.org/JVexwg73",
+    "id": "gSG3A6jC",
+    "url": "https://lichess.org/gSG3A6jC",
     "colour": "white",
     "won": true,
-    "myRating": 1429,
-    "opponent": "SybAIBot",
-    "opponentRating": 1607,
+    "myRating": 1411,
+    "opponent": "maia5",
+    "opponentRating": 1667,
     "opponentTitle": "BOT",
     "speed": "bullet",
-    "status": "outoftime",
-    "playedAt": "2026-09-16T07:17:47.812Z",
-    "lastFen": "r1bq1rk1/pp3pp1/2n1pn1p/2bp4/8/7N/PPP1PPPP/RNBQKB1R b KQ - 1 1"
+    "status": "mate",
+    "playedAt": "2026-09-17T10:15:54.287Z",
+    "lastFen": "4Q2k/p5pp/8/8/5B2/8/PPP3PP/R5KR b - - 0 1"
   }
 }
