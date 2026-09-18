@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-17T11:38:21.003Z",
+  "fetchedAt": "2026-09-18T11:10:32.279Z",
   "game": {
-    "id": "gSG3A6jC",
-    "url": "https://lichess.org/gSG3A6jC",
+    "id": "bjFyGQYU",
+    "url": "https://lichess.org/bjFyGQYU",
     "colour": "white",
     "won": true,
-    "myRating": 1411,
-    "opponent": "maia5",
-    "opponentRating": 1667,
+    "myRating": 1402,
+    "opponent": "Manjunath_09012009",
+    "opponentRating": 3058,
     "opponentTitle": "BOT",
     "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-09-17T10:15:54.287Z",
-    "lastFen": "4Q2k/p5pp/8/8/5B2/8/PPP3PP/R5KR b - - 0 1"
+    "status": "outoftime",
+    "playedAt": "2026-09-18T10:44:43.468Z",
+    "lastFen": "r2qkb1r/pp2p2p/2n3p1/3p1p2/3PnR2/7P/PP2PP1P/RNBQKB2 b Qkq - 1 1"
   }
 }
