@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-21T12:44:35.239Z",
+  "fetchedAt": "2026-09-22T11:34:27.989Z",
   "game": {
-    "id": "RXLwR5sU",
-    "url": "https://lichess.org/RXLwR5sU",
+    "id": "LNvRkKPk",
+    "url": "https://lichess.org/LNvRkKPk",
     "colour": "white",
     "won": true,
-    "myRating": 1451,
-    "opponent": "ChronicGambler",
-    "opponentRating": 1824,
+    "myRating": 1427,
+    "opponent": "Cizme",
+    "opponentRating": 1329,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-09-21T10:37:30.059Z",
-    "lastFen": "2k2Q2/R6p/2p5/1p1n4/1P2ppP1/1PP5/1B2N1PP/4KB1R b K - 0 1"
+    "playedAt": "2026-09-22T10:33:14.365Z",
+    "lastFen": "8/2p3Qk/r1P4n/8/pP3p2/5P1p/PP5P/RNB2KR1 b - - 2 1"
   }
 }
