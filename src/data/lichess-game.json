@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-22T11:34:27.989Z",
+  "fetchedAt": "2026-09-23T11:32:04.289Z",
   "game": {
-    "id": "LNvRkKPk",
-    "url": "https://lichess.org/LNvRkKPk",
-    "colour": "white",
+    "id": "M45Q7Etv",
+    "url": "https://lichess.org/M45Q7Etv",
+    "colour": "black",
     "won": true,
     "myRating": 1427,
-    "opponent": "Cizme",
-    "opponentRating": 1329,
+    "opponent": "maia1",
+    "opponentRating": 1699,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-09-22T10:33:14.365Z",
-    "lastFen": "8/2p3Qk/r1P4n/8/pP3p2/5P1p/PP5P/RNB2KR1 b - - 2 1"
+    "playedAt": "2026-09-23T10:39:00.667Z",
+    "lastFen": "rnb1kb2/pp3N1p/2p4p/3p3Q/B2P4/2N5/PPP3PP/4q2K w - - 2 1"
   }
 }
