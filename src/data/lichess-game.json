@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-23T11:32:04.289Z",
+  "fetchedAt": "2026-09-24T11:41:39.705Z",
   "game": {
-    "id": "M45Q7Etv",
-    "url": "https://lichess.org/M45Q7Etv",
-    "colour": "black",
+    "id": "1DTGREsL",
+    "url": "https://lichess.org/1DTGREsL",
+    "colour": "white",
     "won": true,
-    "myRating": 1427,
+    "myRating": 1417,
     "opponent": "maia1",
-    "opponentRating": 1699,
+    "opponentRating": 1663,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-09-23T10:39:00.667Z",
-    "lastFen": "rnb1kb2/pp3N1p/2p4p/3p3Q/B2P4/2N5/PPP3PP/4q2K w - - 2 1"
+    "playedAt": "2026-09-24T11:12:06.426Z",
+    "lastFen": "k1Q5/p7/8/8/4P3/5p2/PPPPqP2/R1B3K1 b - - 4 1"
   }
 }
