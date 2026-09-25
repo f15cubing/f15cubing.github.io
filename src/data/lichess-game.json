@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-24T11:41:39.705Z",
+  "fetchedAt": "2026-09-25T11:47:40.991Z",
   "game": {
-    "id": "1DTGREsL",
-    "url": "https://lichess.org/1DTGREsL",
-    "colour": "white",
+    "id": "nB7Tf3xp",
+    "url": "https://lichess.org/nB7Tf3xp",
+    "colour": "black",
     "won": true,
-    "myRating": 1417,
-    "opponent": "maia1",
-    "opponentRating": 1663,
+    "myRating": 1275,
+    "opponent": "UltraBrick",
+    "opponentRating": 1472,
     "opponentTitle": "BOT",
-    "speed": "bullet",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-09-24T11:12:06.426Z",
-    "lastFen": "k1Q5/p7/8/8/4P3/5p2/PPPPqP2/R1B3K1 b - - 4 1"
+    "playedAt": "2026-09-25T11:24:17.473Z",
+    "lastFen": "8/1pp1k3/p1p5/5q1p/3p2r1/5K2/1r6/8 w - - 1 1"
   }
 }
