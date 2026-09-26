@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-25T11:47:40.991Z",
+  "fetchedAt": "2026-09-26T11:21:54.082Z",
   "game": {
-    "id": "nB7Tf3xp",
-    "url": "https://lichess.org/nB7Tf3xp",
+    "id": "zLQlGzL8",
+    "url": "https://lichess.org/zLQlGzL8",
     "colour": "black",
     "won": true,
-    "myRating": 1275,
-    "opponent": "UltraBrick",
-    "opponentRating": 1472,
+    "myRating": 1438,
+    "opponent": "turochamp-2ply",
+    "opponentRating": 1680,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-09-25T11:24:17.473Z",
-    "lastFen": "8/1pp1k3/p1p5/5q1p/3p2r1/5K2/1r6/8 w - - 1 1"
+    "playedAt": "2026-09-26T09:37:32.046Z",
+    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
   }
 }
