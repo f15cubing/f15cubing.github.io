@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-09-29T12:48:43.318Z",
+  "fetchedAt": "2026-09-30T12:31:08.432Z",
   "game": {
-    "id": "OlGO7dNP",
-    "url": "https://lichess.org/OlGO7dNP",
-    "colour": "white",
+    "id": "8c3Rkte9",
+    "url": "https://lichess.org/8c3Rkte9",
+    "colour": "black",
     "won": true,
-    "myRating": 1421,
-    "opponent": "slowmate_bot",
-    "opponentRating": 1275,
+    "myRating": 1419,
+    "opponent": "turochamp-2ply",
+    "opponentRating": 1635,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-09-29T07:28:10.788Z",
-    "lastFen": "r1b1Q1k1/pp1p1p1p/4p1p1/8/2P1P2R/3P2P1/5PP1/BN2KB2 b - - 0 1"
+    "playedAt": "2026-09-30T08:52:23.813Z",
+    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
   }
 }
