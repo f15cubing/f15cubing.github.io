@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-01T13:08:31.807Z",
+  "fetchedAt": "2026-10-02T12:29:51.053Z",
   "game": {
-    "id": "BhUVALk2",
-    "url": "https://lichess.org/BhUVALk2",
-    "colour": "white",
+    "id": "yzN7PGgU",
+    "url": "https://lichess.org/yzN7PGgU",
+    "colour": "black",
     "won": true,
-    "myRating": 1406,
-    "opponent": "sargon-2ply",
-    "opponentRating": 1425,
+    "myRating": 1432,
+    "opponent": "turochamp-2ply",
+    "opponentRating": 1610,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-10-01T08:28:23.635Z",
-    "lastFen": "2R1k3/8/4K3/4P3/6P1/8/3N1P1P/8 b - - 10 1"
+    "playedAt": "2026-10-02T08:11:31.985Z",
+    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
   }
 }
