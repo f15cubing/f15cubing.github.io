@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-03T11:37:03.716Z",
+  "fetchedAt": "2026-10-04T12:18:19.914Z",
   "game": {
-    "id": "Djo6gTy3",
-    "url": "https://lichess.org/Djo6gTy3",
-    "colour": "white",
+    "id": "zw5vxigb",
+    "url": "https://lichess.org/zw5vxigb",
+    "colour": "black",
     "won": true,
-    "myRating": 1429,
-    "opponent": "SybAIBot",
-    "opponentRating": 1622,
+    "myRating": 1434,
+    "opponent": "turochamp-2ply",
+    "opponentRating": 1612,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-10-03T09:39:07.681Z",
-    "lastFen": "rnQ1kbnr/pp2pppp/2p5/8/8/7P/PPPP1P1P/RNB1KB1q b Qkq - 1 1"
+    "playedAt": "2026-10-04T09:21:41.954Z",
+    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
   }
 }
