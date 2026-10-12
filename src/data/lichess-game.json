@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-11T12:45:53.807Z",
+  "fetchedAt": "2026-10-12T15:17:54.967Z",
   "game": {
-    "id": "DG8qh1ei",
-    "url": "https://lichess.org/DG8qh1ei",
+    "id": "l1djFP6M",
+    "url": "https://lichess.org/l1djFP6M",
     "colour": "white",
     "won": true,
-    "myRating": 1398,
-    "opponent": "maia5",
-    "opponentRating": 1612,
+    "myRating": 1249,
+    "opponent": "schnecken_bot",
+    "opponentRating": 1471,
     "opponentTitle": "BOT",
-    "speed": "bullet",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-10-11T07:53:59.022Z",
-    "lastFen": "8/8/5R2/3K3P/4N1k1/5P2/1p4PR/2r5 b - - 0 1"
+    "playedAt": "2026-10-12T11:29:51.862Z",
+    "lastFen": "R1k5/4R3/5K2/8/5N2/6PP/8/8 b - - 6 1"
   }
 }
