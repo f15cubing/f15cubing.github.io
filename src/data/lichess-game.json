@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-12T15:17:54.967Z",
+  "fetchedAt": "2026-10-13T14:07:28.353Z",
   "game": {
-    "id": "l1djFP6M",
-    "url": "https://lichess.org/l1djFP6M",
+    "id": "WRQ6WUyR",
+    "url": "https://lichess.org/WRQ6WUyR",
     "colour": "white",
     "won": true,
-    "myRating": 1249,
-    "opponent": "schnecken_bot",
-    "opponentRating": 1471,
+    "myRating": 1494,
+    "opponent": "DrewsChessMachine",
+    "opponentRating": 1487,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "classical",
     "status": "mate",
-    "playedAt": "2026-10-12T11:29:51.862Z",
-    "lastFen": "R1k5/4R3/5K2/8/5N2/6PP/8/8 b - - 6 1"
+    "playedAt": "2026-10-13T09:25:13.369Z",
+    "lastFen": "5rk1/pp3pQ1/7p/3pn3/1b2n2q/4P2P/PP3r1P/RNBK1BR1 b - - 0 1"
   }
 }
