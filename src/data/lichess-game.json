@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-13T14:07:28.353Z",
+  "fetchedAt": "2026-10-14T11:47:49.522Z",
   "game": {
-    "id": "WRQ6WUyR",
-    "url": "https://lichess.org/WRQ6WUyR",
-    "colour": "white",
+    "id": "djtQInWL",
+    "url": "https://lichess.org/djtQInWL",
+    "colour": "black",
     "won": true,
-    "myRating": 1494,
-    "opponent": "DrewsChessMachine",
-    "opponentRating": 1487,
+    "myRating": 1255,
+    "opponent": "bernstein-2ply",
+    "opponentRating": 1142,
     "opponentTitle": "BOT",
-    "speed": "classical",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-10-13T09:25:13.369Z",
-    "lastFen": "5rk1/pp3pQ1/7p/3pn3/1b2n2q/4P2P/PP3r1P/RNBK1BR1 b - - 0 1"
+    "playedAt": "2026-10-14T11:12:17.217Z",
+    "lastFen": "r1b1k3/1p1ppp1Q/p6p/2R4P/P7/1n3P2/5qr1/2R2K2 w - - 9 1"
   }
 }
