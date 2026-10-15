@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-14T11:47:49.522Z",
+  "fetchedAt": "2026-10-15T11:24:14.876Z",
   "game": {
-    "id": "djtQInWL",
-    "url": "https://lichess.org/djtQInWL",
+    "id": "MQGgqpnB",
+    "url": "https://lichess.org/MQGgqpnB",
     "colour": "black",
     "won": true,
-    "myRating": 1255,
-    "opponent": "bernstein-2ply",
-    "opponentRating": 1142,
+    "myRating": 1226,
+    "opponent": "Trainer-Bot",
+    "opponentRating": 1344,
     "opponentTitle": "BOT",
     "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-10-14T11:12:17.217Z",
-    "lastFen": "r1b1k3/1p1ppp1Q/p6p/2R4P/P7/1n3P2/5qr1/2R2K2 w - - 9 1"
+    "playedAt": "2026-10-15T09:30:01.153Z",
+    "lastFen": "8/p6p/8/5k2/6p1/2nn4/5r2/4K3 w - - 20 1"
   }
 }
