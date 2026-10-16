@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-15T11:24:14.876Z",
+  "fetchedAt": "2026-10-16T11:18:38.627Z",
   "game": {
-    "id": "MQGgqpnB",
-    "url": "https://lichess.org/MQGgqpnB",
-    "colour": "black",
+    "id": "X55YpWEp",
+    "url": "https://lichess.org/X55YpWEp",
+    "colour": "white",
     "won": true,
-    "myRating": 1226,
-    "opponent": "Trainer-Bot",
-    "opponentRating": 1344,
+    "myRating": 1485,
+    "opponent": "BubbleBot2",
+    "opponentRating": 1601,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "rapid",
     "status": "mate",
-    "playedAt": "2026-10-15T09:30:01.153Z",
-    "lastFen": "8/p6p/8/5k2/6p1/2nn4/5r2/4K3 w - - 20 1"
+    "playedAt": "2026-10-16T09:15:43.472Z",
+    "lastFen": "4r3/pp4Qk/1n6/2p5/3r4/3N2RP/PP2PP1P/R3KB2 b Q - 2 1"
   }
 }
