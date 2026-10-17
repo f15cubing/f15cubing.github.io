@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-16T11:18:38.627Z",
+  "fetchedAt": "2026-10-17T10:39:20.936Z",
   "game": {
-    "id": "X55YpWEp",
-    "url": "https://lichess.org/X55YpWEp",
+    "id": "uV6reDqz",
+    "url": "https://lichess.org/uV6reDqz",
     "colour": "white",
     "won": true,
-    "myRating": 1485,
-    "opponent": "BubbleBot2",
-    "opponentRating": 1601,
+    "myRating": 1511,
+    "opponent": "Jimmy_inc3710",
+    "opponentRating": 2532,
     "opponentTitle": "BOT",
     "speed": "rapid",
-    "status": "mate",
-    "playedAt": "2026-10-16T09:15:43.472Z",
-    "lastFen": "4r3/pp4Qk/1n6/2p5/3r4/3N2RP/PP2PP1P/R3KB2 b Q - 2 1"
+    "status": "outoftime",
+    "playedAt": "2026-10-17T09:33:23.777Z",
+    "lastFen": "1r2k2r/p2p2p1/1p1bp3/2p2pp1/7n/2NP1P1K/PP1P1P1P/R1B4R b k - 1 1"
   }
 }
