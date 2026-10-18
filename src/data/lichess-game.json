@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-17T10:39:20.936Z",
+  "fetchedAt": "2026-10-18T11:00:03.393Z",
   "game": {
-    "id": "uV6reDqz",
-    "url": "https://lichess.org/uV6reDqz",
+    "id": "V08kEfU1",
+    "url": "https://lichess.org/V08kEfU1",
     "colour": "white",
     "won": true,
-    "myRating": 1511,
-    "opponent": "Jimmy_inc3710",
-    "opponentRating": 2532,
+    "myRating": 1362,
+    "opponent": "maia1",
+    "opponentRating": 1592,
     "opponentTitle": "BOT",
-    "speed": "rapid",
-    "status": "outoftime",
-    "playedAt": "2026-10-17T09:33:23.777Z",
-    "lastFen": "1r2k2r/p2p2p1/1p1bp3/2p2pp1/7n/2NP1P1K/PP1P1P1P/R1B4R b k - 1 1"
+    "speed": "bullet",
+    "status": "mate",
+    "playedAt": "2026-10-18T10:19:39.603Z",
+    "lastFen": "4R1k1/pp3p2/6pK/2p4p/3p4/8/bP5P/8 b - - 1 1"
   }
 }
