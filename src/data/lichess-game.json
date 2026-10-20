@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-19T13:08:11.531Z",
+  "fetchedAt": "2026-10-20T11:31:47.511Z",
   "game": {
-    "id": "cPlL1w4j",
-    "url": "https://lichess.org/cPlL1w4j",
-    "colour": "white",
+    "id": "GErNPU8m",
+    "url": "https://lichess.org/GErNPU8m",
+    "colour": "black",
     "won": true,
-    "myRating": 1377,
+    "myRating": 1390,
     "opponent": "maia5",
-    "opponentRating": 1664,
+    "opponentRating": 1613,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-10-19T12:49:50.863Z",
-    "lastFen": "1k1Q4/ppp5/8/3p2p1/3r4/7P/P3PP1P/2R1KB2 b - - 0 1"
+    "playedAt": "2026-10-20T10:54:39.841Z",
+    "lastFen": "rnk5/pp1Rb2p/4Q1n1/6p1/8/8/PPP3PP/5r1K w - - 1 1"
   }
 }
