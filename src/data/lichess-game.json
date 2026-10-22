@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-21T11:44:23.792Z",
+  "fetchedAt": "2026-10-22T11:47:22.264Z",
   "game": {
-    "id": "nEEUvRhr",
-    "url": "https://lichess.org/nEEUvRhr",
+    "id": "WW2C1mbX",
+    "url": "https://lichess.org/WW2C1mbX",
     "colour": "white",
     "won": true,
-    "myRating": 1392,
-    "opponent": "SybAIBot",
-    "opponentRating": 1598,
+    "myRating": 1400,
+    "opponent": "bernstein-2ply",
+    "opponentRating": 1333,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-10-21T10:39:19.764Z",
-    "lastFen": "k1Q5/pp6/7p/8/3n2B1/1P1P3P/P6P/RN1K4 b - - 0 1"
+    "playedAt": "2026-10-22T07:02:30.662Z",
+    "lastFen": "r5k1/2p3Q1/6pB/7p/p7/2Pq2N1/Pr3PPP/RN2K2R b KQ - 1 1"
   }
 }
