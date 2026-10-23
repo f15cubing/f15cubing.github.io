@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-22T11:47:22.264Z",
+  "fetchedAt": "2026-10-23T11:34:17.309Z",
   "game": {
-    "id": "WW2C1mbX",
-    "url": "https://lichess.org/WW2C1mbX",
+    "id": "n79FdJ5I",
+    "url": "https://lichess.org/n79FdJ5I",
     "colour": "white",
     "won": true,
-    "myRating": 1400,
-    "opponent": "bernstein-2ply",
-    "opponentRating": 1333,
+    "myRating": 1412,
+    "opponent": "maia5",
+    "opponentRating": 1639,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-10-22T07:02:30.662Z",
-    "lastFen": "r5k1/2p3Q1/6pB/7p/p7/2Pq2N1/Pr3PPP/RN2K2R b KQ - 1 1"
+    "playedAt": "2026-10-23T11:09:56.898Z",
+    "lastFen": "k1Q5/pp6/6r1/3p4/5B2/8/4PPPP/4KBNR b - - 0 1"
   }
 }
