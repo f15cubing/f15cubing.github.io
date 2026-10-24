@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-23T11:34:17.309Z",
+  "fetchedAt": "2026-10-24T10:54:37.501Z",
   "game": {
-    "id": "n79FdJ5I",
-    "url": "https://lichess.org/n79FdJ5I",
-    "colour": "white",
+    "id": "tXIyatYF",
+    "url": "https://lichess.org/tXIyatYF",
+    "colour": "black",
     "won": true,
-    "myRating": 1412,
-    "opponent": "maia5",
-    "opponentRating": 1639,
+    "myRating": 1247,
+    "opponent": "sargon-2ply",
+    "opponentRating": 1208,
     "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-10-23T11:09:56.898Z",
-    "lastFen": "k1Q5/pp6/6r1/3p4/5B2/8/4PPPP/4KBNR b - - 0 1"
+    "speed": "blitz",
+    "status": "outoftime",
+    "playedAt": "2026-10-24T10:10:07.731Z",
+    "lastFen": "rn1rk3/pp2ppbp/2p4p/q7/4Q3/2PB1N1P/bP3PP1/R4RK1 w - - 0 1"
   }
 }
