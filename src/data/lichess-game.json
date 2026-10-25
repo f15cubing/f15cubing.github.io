@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-24T10:54:37.501Z",
+  "fetchedAt": "2026-10-25T11:21:32.865Z",
   "game": {
-    "id": "tXIyatYF",
-    "url": "https://lichess.org/tXIyatYF",
+    "id": "EgbBpMoU",
+    "url": "https://lichess.org/EgbBpMoU",
     "colour": "black",
     "won": true,
-    "myRating": 1247,
-    "opponent": "sargon-2ply",
-    "opponentRating": 1208,
+    "myRating": 1458,
+    "opponent": "DrewsChessMachine",
+    "opponentRating": 1589,
     "opponentTitle": "BOT",
-    "speed": "blitz",
-    "status": "outoftime",
-    "playedAt": "2026-10-24T10:10:07.731Z",
-    "lastFen": "rn1rk3/pp2ppbp/2p4p/q7/4Q3/2PB1N1P/bP3PP1/R4RK1 w - - 0 1"
+    "speed": "classical",
+    "status": "mate",
+    "playedAt": "2026-10-25T09:58:41.810Z",
+    "lastFen": "rn2kbr1/1p2pp1p/p7/5Q1B/4N3/8/PPP3qP/R4RK1 w q - 0 1"
   }
 }
