@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-25T11:21:32.865Z",
+  "fetchedAt": "2026-10-26T12:55:52.013Z",
   "game": {
-    "id": "EgbBpMoU",
-    "url": "https://lichess.org/EgbBpMoU",
+    "id": "Q0MGpjbt",
+    "url": "https://lichess.org/Q0MGpjbt",
     "colour": "black",
     "won": true,
-    "myRating": 1458,
-    "opponent": "DrewsChessMachine",
-    "opponentRating": 1589,
+    "myRating": 1499,
+    "opponent": "nanoDanya",
+    "opponentRating": 1655,
     "opponentTitle": "BOT",
-    "speed": "classical",
+    "speed": "rapid",
     "status": "mate",
-    "playedAt": "2026-10-25T09:58:41.810Z",
-    "lastFen": "rn2kbr1/1p2pp1p/p7/5Q1B/4N3/8/PPP3qP/R4RK1 w q - 0 1"
+    "playedAt": "2026-10-26T08:10:50.173Z",
+    "lastFen": "2r1k3/R2R1p1p/4p3/5q2/3PK2P/4P3/8/8 w - - 1 1"
   }
 }
