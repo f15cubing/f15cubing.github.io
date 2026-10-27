@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-26T12:55:52.013Z",
+  "fetchedAt": "2026-10-27T12:06:29.797Z",
   "game": {
-    "id": "Q0MGpjbt",
-    "url": "https://lichess.org/Q0MGpjbt",
-    "colour": "black",
+    "id": "jv03rqYz",
+    "url": "https://lichess.org/jv03rqYz",
+    "colour": "white",
     "won": true,
-    "myRating": 1499,
-    "opponent": "nanoDanya",
-    "opponentRating": 1655,
+    "myRating": 1237,
+    "opponent": "BubbleBot2",
+    "opponentRating": 1302,
     "opponentTitle": "BOT",
-    "speed": "rapid",
-    "status": "mate",
-    "playedAt": "2026-10-26T08:10:50.173Z",
-    "lastFen": "2r1k3/R2R1p1p/4p3/5q2/3PK2P/4P3/8/8 w - - 1 1"
+    "speed": "blitz",
+    "status": "resign",
+    "playedAt": "2026-10-27T11:24:14.564Z",
+    "lastFen": "8/1Bk4N/8/8/7R/5P1P/P2P3P/3K1R2 w - - 9 1"
   }
 }
