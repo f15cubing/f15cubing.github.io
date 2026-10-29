@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-28T12:48:53.625Z",
+  "fetchedAt": "2026-10-29T12:56:07.445Z",
   "game": {
-    "id": "CRLxDiLp",
-    "url": "https://lichess.org/CRLxDiLp",
+    "id": "MgloWSO8",
+    "url": "https://lichess.org/MgloWSO8",
     "colour": "black",
     "won": true,
-    "myRating": 1225,
-    "opponent": "joshsbot",
-    "opponentRating": 1298,
+    "myRating": 1480,
+    "opponent": "nanoDanya",
+    "opponentRating": 1659,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "rapid",
     "status": "mate",
-    "playedAt": "2026-10-28T08:26:07.937Z",
-    "lastFen": "rn1qkb1r/3p1p2/b2p1n2/3KpP1p/1P2P2P/P6Q/2P4N/RNB4R w - - 2 1"
+    "playedAt": "2026-10-29T07:53:03.143Z",
+    "lastFen": "r5k1/1p1nR3/p2p4/3N4/4P3/4BP2/PPP5/2K1q3 w - - 1 1"
   }
 }
