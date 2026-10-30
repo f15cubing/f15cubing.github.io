@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-29T12:56:07.445Z",
+  "fetchedAt": "2026-10-30T12:49:18.835Z",
   "game": {
-    "id": "MgloWSO8",
-    "url": "https://lichess.org/MgloWSO8",
+    "id": "WiGt7d2S",
+    "url": "https://lichess.org/WiGt7d2S",
     "colour": "black",
     "won": true,
-    "myRating": 1480,
-    "opponent": "nanoDanya",
-    "opponentRating": 1659,
+    "myRating": 1260,
+    "opponent": "sargon-3ply",
+    "opponentRating": 1441,
     "opponentTitle": "BOT",
-    "speed": "rapid",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-10-29T07:53:03.143Z",
-    "lastFen": "r5k1/1p1nR3/p2p4/3N4/4P3/4BP2/PPP5/2K1q3 w - - 1 1"
+    "playedAt": "2026-10-30T08:57:50.697Z",
+    "lastFen": "2bK2r1/p4k2/1p6/2r3n1/P2PPB2/1P4R1/8/4R3 w - - 9 1"
   }
 }
