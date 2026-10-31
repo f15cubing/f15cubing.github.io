@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-30T12:49:18.835Z",
+  "fetchedAt": "2026-10-31T12:22:12.164Z",
   "game": {
-    "id": "WiGt7d2S",
-    "url": "https://lichess.org/WiGt7d2S",
-    "colour": "black",
+    "id": "lDeiJrRV",
+    "url": "https://lichess.org/lDeiJrRV",
+    "colour": "white",
     "won": true,
-    "myRating": 1260,
-    "opponent": "sargon-3ply",
-    "opponentRating": 1441,
+    "myRating": 1358,
+    "opponent": "reaper1bot",
+    "opponentRating": 1359,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-10-30T08:57:50.697Z",
-    "lastFen": "2bK2r1/p4k2/1p6/2r3n1/P2PPB2/1P4R1/8/4R3 w - - 9 1"
+    "playedAt": "2026-10-31T10:08:37.854Z",
+    "lastFen": "1R6/6R1/4Bk2/3P4/3BP2p/3K4/1PP4r/8 b - - 0 1"
   }
 }
