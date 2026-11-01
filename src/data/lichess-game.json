@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-31T12:22:12.164Z",
+  "fetchedAt": "2026-11-01T13:16:38.720Z",
   "game": {
-    "id": "lDeiJrRV",
-    "url": "https://lichess.org/lDeiJrRV",
+    "id": "ep7w2llR",
+    "url": "https://lichess.org/ep7w2llR",
     "colour": "white",
     "won": true,
-    "myRating": 1358,
-    "opponent": "reaper1bot",
-    "opponentRating": 1359,
+    "myRating": 1250,
+    "opponent": "StockFail",
+    "opponentRating": 1636,
     "opponentTitle": "BOT",
-    "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-10-31T10:08:37.854Z",
-    "lastFen": "1R6/6R1/4Bk2/3P4/3BP2p/3K4/1PP4r/8 b - - 0 1"
+    "speed": "blitz",
+    "status": "outoftime",
+    "playedAt": "2026-11-01T10:35:09.577Z",
+    "lastFen": "8/p7/1p1kppp1/8/1B3P2/P7/P3q2p/2K5 b - - 1 1"
   }
 }
