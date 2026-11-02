@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-01T13:16:38.720Z",
+  "fetchedAt": "2026-11-02T15:44:23.754Z",
   "game": {
-    "id": "ep7w2llR",
-    "url": "https://lichess.org/ep7w2llR",
-    "colour": "white",
+    "id": "TPa5hwkE",
+    "url": "https://lichess.org/TPa5hwkE",
+    "colour": "black",
     "won": true,
-    "myRating": 1250,
-    "opponent": "StockFail",
-    "opponentRating": 1636,
+    "myRating": 1383,
+    "opponent": "maia1",
+    "opponentRating": 1610,
     "opponentTitle": "BOT",
-    "speed": "blitz",
-    "status": "outoftime",
-    "playedAt": "2026-11-01T10:35:09.577Z",
-    "lastFen": "8/p7/1p1kppp1/8/1B3P2/P7/P3q2p/2K5 b - - 1 1"
+    "speed": "bullet",
+    "status": "mate",
+    "playedAt": "2026-11-02T09:20:24.857Z",
+    "lastFen": "8/p4pk1/p1Bp4/7p/2P3p1/P7/5PPP/4q1K1 w - - 0 1"
   }
 }
