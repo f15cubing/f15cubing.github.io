@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-04T14:27:46.984Z",
+  "fetchedAt": "2026-11-05T14:34:51.444Z",
   "game": {
-    "id": "P1w3Acyj",
-    "url": "https://lichess.org/P1w3Acyj",
+    "id": "U8NmQtg9",
+    "url": "https://lichess.org/U8NmQtg9",
     "colour": "black",
     "won": true,
-    "myRating": 1417,
-    "opponent": "turochamp-2ply",
-    "opponentRating": 1545,
+    "myRating": 1411,
+    "opponent": "maia1",
+    "opponentRating": 1641,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-11-04T08:20:30.370Z",
-    "lastFen": "r1b2k2/ppN2pp1/8/1P6/P3P3/4qPn1/3r4/2R3K1 w - - 0 1"
+    "playedAt": "2026-11-05T12:33:09.016Z",
+    "lastFen": "rn2k1r1/pp2B1pp/8/8/8/5Q2/PPP2PPP/RN2q1K1 w q - 1 1"
   }
 }
