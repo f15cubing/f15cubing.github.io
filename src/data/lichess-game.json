@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-07T12:55:51.245Z",
+  "fetchedAt": "2026-11-08T13:18:41.949Z",
   "game": {
-    "id": "SGQJOTWb",
-    "url": "https://lichess.org/SGQJOTWb",
+    "id": "IljGst64",
+    "url": "https://lichess.org/IljGst64",
     "colour": "white",
     "won": true,
-    "myRating": 1376,
-    "opponent": "maia5",
-    "opponentRating": 1604,
+    "myRating": 1394,
+    "opponent": "Peacemaker-0_0",
+    "opponentRating": 1570,
     "opponentTitle": "BOT",
     "speed": "bullet",
-    "status": "mate",
-    "playedAt": "2026-11-07T10:51:18.017Z",
-    "lastFen": "3Q4/1pk3p1/2p4p/8/8/8/PPK1PPPP/3R1B1R b - - 0 1"
+    "status": "outoftime",
+    "playedAt": "2026-11-08T08:38:37.175Z",
+    "lastFen": "r6r/pppk1ppp/2n5/8/8/1P2P2P/1P2P2P/R3KB1R b KQ - 0 1"
   }
 }
