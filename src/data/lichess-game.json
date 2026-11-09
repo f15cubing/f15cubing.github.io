@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-08T13:18:41.949Z",
+  "fetchedAt": "2026-11-09T16:10:49.542Z",
   "game": {
-    "id": "IljGst64",
-    "url": "https://lichess.org/IljGst64",
+    "id": "C3TE3E9e",
+    "url": "https://lichess.org/C3TE3E9e",
     "colour": "white",
     "won": true,
-    "myRating": 1394,
-    "opponent": "Peacemaker-0_0",
-    "opponentRating": 1570,
+    "myRating": 1413,
+    "opponent": "larryz-alterego",
+    "opponentRating": 1229,
     "opponentTitle": "BOT",
     "speed": "bullet",
-    "status": "outoftime",
-    "playedAt": "2026-11-08T08:38:37.175Z",
-    "lastFen": "r6r/pppk1ppp/2n5/8/8/1P2P2P/1P2P2P/R3KB1R b KQ - 0 1"
+    "status": "mate",
+    "playedAt": "2026-11-09T09:21:28.954Z",
+    "lastFen": "4k2Q/R7/8/4p3/8/1P1p4/1P4PP/1N2K1R1 b - - 1 1"
   }
 }
