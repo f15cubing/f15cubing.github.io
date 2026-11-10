@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-09T16:10:49.542Z",
+  "fetchedAt": "2026-11-10T14:49:46.118Z",
   "game": {
-    "id": "C3TE3E9e",
-    "url": "https://lichess.org/C3TE3E9e",
-    "colour": "white",
+    "id": "Sm8g2Zvc",
+    "url": "https://lichess.org/Sm8g2Zvc",
+    "colour": "black",
     "won": true,
-    "myRating": 1413,
-    "opponent": "larryz-alterego",
-    "opponentRating": 1229,
+    "myRating": 1479,
+    "opponent": "DrewsChessMachine",
+    "opponentRating": 1715,
     "opponentTitle": "BOT",
-    "speed": "bullet",
+    "speed": "classical",
     "status": "mate",
-    "playedAt": "2026-11-09T09:21:28.954Z",
-    "lastFen": "4k2Q/R7/8/4p3/8/1P1p4/1P4PP/1N2K1R1 b - - 1 1"
+    "playedAt": "2026-11-10T14:29:55.447Z",
+    "lastFen": "rn2kbr1/1p2pp1p/p7/5Q1B/4N3/8/PPP3qP/R4RK1 w q - 0 1"
   }
 }
