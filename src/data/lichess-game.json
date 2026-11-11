@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-10T14:49:46.118Z",
+  "fetchedAt": "2026-11-11T14:15:16.738Z",
   "game": {
-    "id": "Sm8g2Zvc",
-    "url": "https://lichess.org/Sm8g2Zvc",
-    "colour": "black",
+    "id": "hKht4ft9",
+    "url": "https://lichess.org/hKht4ft9",
+    "colour": "white",
     "won": true,
-    "myRating": 1479,
-    "opponent": "DrewsChessMachine",
-    "opponentRating": 1715,
+    "myRating": 1495,
+    "opponent": "joshsbot",
+    "opponentRating": 1570,
     "opponentTitle": "BOT",
     "speed": "classical",
-    "status": "mate",
-    "playedAt": "2026-11-10T14:29:55.447Z",
-    "lastFen": "rn2kbr1/1p2pp1p/p7/5Q1B/4N3/8/PPP3qP/R4RK1 w q - 0 1"
+    "status": "outoftime",
+    "playedAt": "2026-11-11T09:19:16.437Z",
+    "lastFen": "r3k2r/p1p2p1p/Npn3qp/3p1b2/1b1P4/2N5/PP2PPPP/R2QKB1R b Qkq - 1 1"
   }
 }
