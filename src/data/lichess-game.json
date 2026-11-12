@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-11T14:15:16.738Z",
+  "fetchedAt": "2026-11-12T15:07:56.091Z",
   "game": {
-    "id": "hKht4ft9",
-    "url": "https://lichess.org/hKht4ft9",
-    "colour": "white",
+    "id": "iO4mIiDR",
+    "url": "https://lichess.org/iO4mIiDR",
+    "colour": "black",
     "won": true,
-    "myRating": 1495,
-    "opponent": "joshsbot",
-    "opponentRating": 1570,
+    "myRating": 1375,
+    "opponent": "maia5",
+    "opponentRating": 1628,
     "opponentTitle": "BOT",
-    "speed": "classical",
-    "status": "outoftime",
-    "playedAt": "2026-11-11T09:19:16.437Z",
-    "lastFen": "r3k2r/p1p2p1p/Npn3qp/3p1b2/1b1P4/2N5/PP2PPPP/R2QKB1R b Qkq - 1 1"
+    "speed": "bullet",
+    "status": "mate",
+    "playedAt": "2026-11-12T12:54:18.427Z",
+    "lastFen": "r1b2k2/pp1ppp1p/1n6/q7/1Kn5/1P3B2/P1P2P2/8 w - - 3 1"
   }
 }
