@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-14T13:27:45.703Z",
+  "fetchedAt": "2026-11-15T13:53:17.949Z",
   "game": {
-    "id": "xxC9hcE1",
-    "url": "https://lichess.org/xxC9hcE1",
-    "colour": "black",
+    "id": "qDFvmnF9",
+    "url": "https://lichess.org/qDFvmnF9",
+    "colour": "white",
     "won": true,
-    "myRating": 1368,
+    "myRating": 1194,
     "opponent": "Trainer-Bot",
-    "opponentRating": 1479,
+    "opponentRating": 1336,
     "opponentTitle": "BOT",
-    "speed": "rapid",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-11-14T10:15:21.410Z",
-    "lastFen": "2rK1k2/1p3p1p/p6p/1p3b2/4rP2/8/3R4/8 w - - 3 1"
+    "playedAt": "2026-11-15T12:00:18.489Z",
+    "lastFen": "8/6Qk/6p1/5p1N/8/1PP5/1P3PP1/R1B3K1 b - - 4 1"
   }
 }
