@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-15T13:53:17.949Z",
+  "fetchedAt": "2026-11-16T15:39:07.147Z",
   "game": {
-    "id": "qDFvmnF9",
-    "url": "https://lichess.org/qDFvmnF9",
+    "id": "eoXMp2M4",
+    "url": "https://lichess.org/eoXMp2M4",
     "colour": "white",
     "won": true,
-    "myRating": 1194,
-    "opponent": "Trainer-Bot",
-    "opponentRating": 1336,
+    "myRating": 1341,
+    "opponent": "nanoDanya",
+    "opponentRating": 1644,
     "opponentTitle": "BOT",
-    "speed": "blitz",
+    "speed": "rapid",
     "status": "mate",
-    "playedAt": "2026-11-15T12:00:18.489Z",
-    "lastFen": "8/6Qk/6p1/5p1N/8/1PP5/1P3PP1/R1B3K1 b - - 4 1"
+    "playedAt": "2026-11-16T11:52:43.788Z",
+    "lastFen": "1kr5/pQ6/p7/3B4/1KP5/7P/P3PP1P/R7 b - - 2 1"
   }
 }
