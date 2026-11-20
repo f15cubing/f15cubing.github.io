@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-19T15:41:13.341Z",
+  "fetchedAt": "2026-11-20T15:23:47.522Z",
   "game": {
-    "id": "PTS2uZqg",
-    "url": "https://lichess.org/PTS2uZqg",
+    "id": "QL5oSWWX",
+    "url": "https://lichess.org/QL5oSWWX",
     "colour": "white",
     "won": true,
-    "myRating": 1357,
-    "opponent": "uSunfish-l1",
-    "opponentRating": 1265,
+    "myRating": 1316,
+    "opponent": "chesslabdk",
+    "opponentRating": 1642,
     "opponentTitle": "BOT",
-    "speed": "bullet",
+    "speed": "rapid",
     "status": "mate",
-    "playedAt": "2026-11-19T10:17:03.640Z",
-    "lastFen": "r1b1k2r/ppppQppp/5P2/8/2B5/5N2/Pp3PPP/RNB1K2R b KQkq - 0 1"
+    "playedAt": "2026-11-20T12:19:34.213Z",
+    "lastFen": "3Q2k1/5ppp/p7/8/8/2b1P3/P4PPP/5RK1 b - - 0 1"
   }
 }
