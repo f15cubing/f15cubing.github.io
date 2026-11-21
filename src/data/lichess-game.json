@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-20T15:23:47.522Z",
+  "fetchedAt": "2026-11-21T14:36:53.069Z",
   "game": {
-    "id": "QL5oSWWX",
-    "url": "https://lichess.org/QL5oSWWX",
+    "id": "yPC17738",
+    "url": "https://lichess.org/yPC17738",
     "colour": "white",
     "won": true,
-    "myRating": 1316,
-    "opponent": "chesslabdk",
-    "opponentRating": 1642,
+    "myRating": 1347,
+    "opponent": "Peacemaker-0_0",
+    "opponentRating": 1613,
     "opponentTitle": "BOT",
-    "speed": "rapid",
+    "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-11-20T12:19:34.213Z",
-    "lastFen": "3Q2k1/5ppp/p7/8/8/2b1P3/P4PPP/5RK1 b - - 0 1"
+    "playedAt": "2026-11-21T10:00:21.933Z",
+    "lastFen": "2Q1kb1r/4ppp1/5q2/4n3/1P2P3/2K2P2/P7/R1BR4 b - - 0 1"
   }
 }
