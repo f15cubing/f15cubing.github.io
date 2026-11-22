@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-21T14:36:53.069Z",
+  "fetchedAt": "2026-11-22T14:30:24.948Z",
   "game": {
-    "id": "yPC17738",
-    "url": "https://lichess.org/yPC17738",
-    "colour": "white",
+    "id": "guLy5RSo",
+    "url": "https://lichess.org/guLy5RSo",
+    "colour": "black",
     "won": true,
-    "myRating": 1347,
-    "opponent": "Peacemaker-0_0",
-    "opponentRating": 1613,
+    "myRating": 1195,
+    "opponent": "Benzene-Phenol-02",
+    "opponentRating": 1450,
     "opponentTitle": "BOT",
-    "speed": "bullet",
+    "speed": "blitz",
     "status": "mate",
-    "playedAt": "2026-11-21T10:00:21.933Z",
-    "lastFen": "2Q1kb1r/4ppp1/5q2/4n3/1P2P3/2K2P2/P7/R1BR4 b - - 0 1"
+    "playedAt": "2026-11-22T13:44:52.460Z",
+    "lastFen": "1r3k1r/3Q1p1p/p2p4/5P2/2B5/8/PqP5/1K1RR3 w - - 0 1"
   }
 }
