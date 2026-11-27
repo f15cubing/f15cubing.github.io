@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-11-26T16:50:13.990Z",
+  "fetchedAt": "2026-11-27T16:35:20.111Z",
   "game": {
-    "id": "raBjHZwl",
-    "url": "https://lichess.org/raBjHZwl",
+    "id": "VFOk7jWV",
+    "url": "https://lichess.org/VFOk7jWV",
     "colour": "white",
     "won": true,
-    "myRating": 1365,
-    "opponent": "plynder-1",
-    "opponentRating": 1488,
+    "myRating": 1381,
+    "opponent": "SybAIBot",
+    "opponentRating": 1655,
     "opponentTitle": "BOT",
     "speed": "bullet",
     "status": "mate",
-    "playedAt": "2026-11-26T14:00:38.590Z",
-    "lastFen": "8/1p6/pk6/2Q5/8/2P1B1P1/P3BKPr/R7 b - - 0 1"
+    "playedAt": "2026-11-27T13:51:20.460Z",
+    "lastFen": "5Qk1/p4p1p/2p3p1/2B5/2p2P2/N4KP1/P6P/8 b - - 0 1"
   }
 }
